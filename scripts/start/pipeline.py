@@ -1,13 +1,16 @@
 from __future__ import annotations
 
 import logging
+import os
 import subprocess
 import sys
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
-RAIZ = Path(__file__).resolve().parents[1]
+RAIZ = Path(__file__).resolve().parents[2]
 SCRIPTS = RAIZ / "scripts"
+RUTA_VISUALIZER = SCRIPTS / "visualizer" / "serve.py"
 sys.path.insert(0, str(SCRIPTS))
 
 from generate_sboms import SBOMGenerator
@@ -32,6 +35,41 @@ def _ejecutar_subprocess(script: str) -> bool:
         check=False,
     )
     return resultado.returncode == 0
+
+
+def _lanzar_dashboard() -> subprocess.Popen | None:
+    if not RUTA_VISUALIZER.exists():
+        LOGGER.warning("Visualizer no encontrado en %s, se omite el dashboard", RUTA_VISUALIZER)
+        return None
+
+    proc = subprocess.Popen(
+        [sys.executable, str(RUTA_VISUALIZER)],
+        cwd=str(RAIZ),
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
+    time.sleep(1)
+    if proc.poll() is not None:
+        LOGGER.warning("El dashboard termino inmediatamente (codigo=%s)", proc.returncode)
+        return None
+
+    puerto = os.environ.get("PORT", "4173")
+    LOGGER.info("=" * 60)
+    LOGGER.info("Dashboard activo en http://localhost:%s", puerto)
+    LOGGER.info("Refresco automatico cada 500 ms mientras corre el pipeline")
+    LOGGER.info("=" * 60)
+    return proc
+
+
+def _detener_dashboard(proc: subprocess.Popen | None) -> None:
+    if proc is None or proc.poll() is not None:
+        return
+    proc.terminate()
+    try:
+        proc.wait(timeout=5)
+    except subprocess.TimeoutExpired:
+        proc.kill()
+        proc.wait()
 
 
 def _ejecutar_en_paralelo(fn, items, workers: int) -> tuple[int, int]:
@@ -134,7 +172,7 @@ def _ejecutar_etapa_codeql(repositorios: list[str]) -> tuple[int, int]:
     return _ejecutar_en_paralelo(procesar, repositorios, WORKERS_CODEQL)
 
 
-def main() -> int:
+def _correr_etapas() -> int:
     LOGGER.info("=== Iniciando pipeline de analisis ===")
 
     LOGGER.info("[1/6] Obteniendo repositorios desde GitHub...")
@@ -177,6 +215,31 @@ def main() -> int:
 
     LOGGER.info("=== Pipeline finalizado ===")
     return 0
+
+
+def main() -> int:
+    dashboard = _lanzar_dashboard()
+    codigo = 0
+    try:
+        codigo = _correr_etapas()
+    except KeyboardInterrupt:
+        LOGGER.info("Interrumpido por el usuario")
+        codigo = 130
+
+    if dashboard is not None and dashboard.poll() is None:
+        puerto = os.environ.get("PORT", "4173")
+        LOGGER.info("=" * 60)
+        LOGGER.info("Dashboard sigue activo en http://localhost:%s", puerto)
+        LOGGER.info("Pulsa Ctrl-C para detenerlo y salir.")
+        LOGGER.info("=" * 60)
+        try:
+            dashboard.wait()
+        except KeyboardInterrupt:
+            pass
+        finally:
+            _detener_dashboard(dashboard)
+
+    return codigo
 
 
 if __name__ == "__main__":

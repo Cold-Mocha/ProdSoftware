@@ -5,7 +5,7 @@ import shutil
 import sys
 from pathlib import Path
 
-RAIZ = Path(__file__).resolve().parents[1]
+RAIZ = Path(__file__).resolve().parents[2]
 
 OBJETIVOS = [
     RAIZ / "data" / "repos",
