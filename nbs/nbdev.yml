@@ -1,9 +1,0 @@
-project:
-  output-dir: _docs
-
-website:
-  title: "Produccion de Software EMI305"
-  site-url: "https://dci-courses.github.io/produccion_software_emi305"
-  description: "Material del curso Produccion de Software EMI305"
-  repo-branch: main
-  repo-url: "https://github.com/dci-courses/produccion_software_emi305"

@@ -37,6 +37,13 @@ def get_top_repos_por_estrellas():
             "url": repo["clone_url"],
             "path": f"{BASE_PATH}/{repo['name']}",
             "ref": repo.get("default_branch", "main"),
+            "name": repo["name"],
+            "full_name": repo.get("full_name", f"{ORG}/{repo['name']}"),
+            "language": repo.get("language"),
+            "stars": repo.get("stargazers_count", 0),
+            "description": repo.get("description"),
+            "default_branch": repo.get("default_branch", "main"),
+            "pushed_at": repo.get("pushed_at"),
         }
         for repo in repos_ordenados[:TOP_N]
     ]
