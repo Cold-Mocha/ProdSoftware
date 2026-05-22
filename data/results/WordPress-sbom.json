@@ -1,0 +1,646 @@
+{
+  "artifacts": [
+    {
+      "id": "c0824bd21bd189aa",
+      "name": "twentynineteen",
+      "version": "3.3.0",
+      "type": "npm",
+      "foundBy": "javascript-lock-cataloger",
+      "locations": [
+        {
+          "path": "/wp-content/themes/twentynineteen/package-lock.json",
+          "accessPath": "/wp-content/themes/twentynineteen/package-lock.json",
+          "annotations": {
+            "evidence": "primary"
+          }
+        }
+      ],
+      "licenses": [],
+      "language": "javascript",
+      "cpes": [
+        {
+          "cpe": "cpe:2.3:a:twentynineteen:twentynineteen:3.3.0:*:*:*:*:*:*:*",
+          "source": "syft-generated"
+        }
+      ],
+      "purl": "pkg:npm/twentynineteen@3.3.0",
+      "metadataType": "javascript-npm-package-lock-entry",
+      "metadata": {
+        "resolved": "",
+        "integrity": "",
+        "dependencies": null
+      }
+    },
+    {
+      "id": "3e0c4335cd40fc49",
+      "name": "twentytwenty",
+      "version": "3.1.0",
+      "type": "npm",
+      "foundBy": "javascript-lock-cataloger",
+      "locations": [
+        {
+          "path": "/wp-content/themes/twentytwenty/package-lock.json",
+          "accessPath": "/wp-content/themes/twentytwenty/package-lock.json",
+          "annotations": {
+            "evidence": "primary"
+          }
+        }
+      ],
+      "licenses": [
+        {
+          "value": "GPL-2.0-or-later",
+          "spdxExpression": "GPL-2.0-or-later",
+          "type": "declared",
+          "urls": [],
+          "locations": [
+            {
+              "path": "/wp-content/themes/twentytwenty/package-lock.json",
+              "accessPath": "/wp-content/themes/twentytwenty/package-lock.json",
+              "annotations": {
+                "evidence": "primary"
+              }
+            }
+          ]
+        }
+      ],
+      "language": "javascript",
+      "cpes": [
+        {
+          "cpe": "cpe:2.3:a:twentytwenty:twentytwenty:3.1.0:*:*:*:*:*:*:*",
+          "source": "syft-generated"
+        }
+      ],
+      "purl": "pkg:npm/twentytwenty@3.1.0",
+      "metadataType": "javascript-npm-package-lock-entry",
+      "metadata": {
+        "resolved": "",
+        "integrity": "",
+        "dependencies": null
+      }
+    },
+    {
+      "id": "f79b1ddb7b6f7884",
+      "name": "twentytwentyfive",
+      "version": "1.5.0",
+      "type": "npm",
+      "foundBy": "javascript-lock-cataloger",
+      "locations": [
+        {
+          "path": "/wp-content/themes/twentytwentyfive/package-lock.json",
+          "accessPath": "/wp-content/themes/twentytwentyfive/package-lock.json",
+          "annotations": {
+            "evidence": "primary"
+          }
+        }
+      ],
+      "licenses": [
+        {
+          "value": "GPL-2.0-or-later",
+          "spdxExpression": "GPL-2.0-or-later",
+          "type": "declared",
+          "urls": [],
+          "locations": [
+            {
+              "path": "/wp-content/themes/twentytwentyfive/package-lock.json",
+              "accessPath": "/wp-content/themes/twentytwentyfive/package-lock.json",
+              "annotations": {
+                "evidence": "primary"
+              }
+            }
+          ]
+        }
+      ],
+      "language": "javascript",
+      "cpes": [
+        {
+          "cpe": "cpe:2.3:a:twentytwentyfive:twentytwentyfive:1.5.0:*:*:*:*:*:*:*",
+          "source": "syft-generated"
+        }
+      ],
+      "purl": "pkg:npm/twentytwentyfive@1.5.0",
+      "metadataType": "javascript-npm-package-lock-entry",
+      "metadata": {
+        "resolved": "",
+        "integrity": "",
+        "dependencies": null
+      }
+    },
+    {
+      "id": "4065a0de5b200c6d",
+      "name": "twentytwentyone",
+      "version": "2.8.0",
+      "type": "npm",
+      "foundBy": "javascript-lock-cataloger",
+      "locations": [
+        {
+          "path": "/wp-content/themes/twentytwentyone/package-lock.json",
+          "accessPath": "/wp-content/themes/twentytwentyone/package-lock.json",
+          "annotations": {
+            "evidence": "primary"
+          }
+        }
+      ],
+      "licenses": [
+        {
+          "value": "GPL-2.0-or-later",
+          "spdxExpression": "GPL-2.0-or-later",
+          "type": "declared",
+          "urls": [],
+          "locations": [
+            {
+              "path": "/wp-content/themes/twentytwentyone/package-lock.json",
+              "accessPath": "/wp-content/themes/twentytwentyone/package-lock.json",
+              "annotations": {
+                "evidence": "primary"
+              }
+            }
+          ]
+        }
+      ],
+      "language": "javascript",
+      "cpes": [
+        {
+          "cpe": "cpe:2.3:a:twentytwentyone:twentytwentyone:2.8.0:*:*:*:*:*:*:*",
+          "source": "syft-generated"
+        }
+      ],
+      "purl": "pkg:npm/twentytwentyone@2.8.0",
+      "metadataType": "javascript-npm-package-lock-entry",
+      "metadata": {
+        "resolved": "",
+        "integrity": "",
+        "dependencies": null
+      }
+    },
+    {
+      "id": "85ae5898510bae25",
+      "name": "twentytwentytwo",
+      "version": "2.1.0",
+      "type": "npm",
+      "foundBy": "javascript-lock-cataloger",
+      "locations": [
+        {
+          "path": "/wp-content/themes/twentytwentytwo/package-lock.json",
+          "accessPath": "/wp-content/themes/twentytwentytwo/package-lock.json",
+          "annotations": {
+            "evidence": "primary"
+          }
+        }
+      ],
+      "licenses": [
+        {
+          "value": "GPL-2.0-or-later",
+          "spdxExpression": "GPL-2.0-or-later",
+          "type": "declared",
+          "urls": [],
+          "locations": [
+            {
+              "path": "/wp-content/themes/twentytwentytwo/package-lock.json",
+              "accessPath": "/wp-content/themes/twentytwentytwo/package-lock.json",
+              "annotations": {
+                "evidence": "primary"
+              }
+            }
+          ]
+        }
+      ],
+      "language": "javascript",
+      "cpes": [
+        {
+          "cpe": "cpe:2.3:a:twentytwentytwo:twentytwentytwo:2.1.0:*:*:*:*:*:*:*",
+          "source": "syft-generated"
+        }
+      ],
+      "purl": "pkg:npm/twentytwentytwo@2.1.0",
+      "metadataType": "javascript-npm-package-lock-entry",
+      "metadata": {
+        "resolved": "",
+        "integrity": "",
+        "dependencies": null
+      }
+    }
+  ],
+  "artifactRelationships": [
+    {
+      "parent": "0b6473facd8f33e69fdae34bb01adad2ee1db2ab6cdcd4b9549517a9aae27274",
+      "child": "3e0c4335cd40fc49",
+      "type": "contains"
+    },
+    {
+      "parent": "0b6473facd8f33e69fdae34bb01adad2ee1db2ab6cdcd4b9549517a9aae27274",
+      "child": "4065a0de5b200c6d",
+      "type": "contains"
+    },
+    {
+      "parent": "0b6473facd8f33e69fdae34bb01adad2ee1db2ab6cdcd4b9549517a9aae27274",
+      "child": "85ae5898510bae25",
+      "type": "contains"
+    },
+    {
+      "parent": "0b6473facd8f33e69fdae34bb01adad2ee1db2ab6cdcd4b9549517a9aae27274",
+      "child": "c0824bd21bd189aa",
+      "type": "contains"
+    },
+    {
+      "parent": "0b6473facd8f33e69fdae34bb01adad2ee1db2ab6cdcd4b9549517a9aae27274",
+      "child": "f79b1ddb7b6f7884",
+      "type": "contains"
+    },
+    {
+      "parent": "3e0c4335cd40fc49",
+      "child": "e27d9ad5e3d99249",
+      "type": "evident-by",
+      "metadata": {
+        "kind": "primary"
+      }
+    },
+    {
+      "parent": "4065a0de5b200c6d",
+      "child": "53a8a5d39fb92953",
+      "type": "evident-by",
+      "metadata": {
+        "kind": "primary"
+      }
+    },
+    {
+      "parent": "85ae5898510bae25",
+      "child": "313cc630b374042f",
+      "type": "evident-by",
+      "metadata": {
+        "kind": "primary"
+      }
+    },
+    {
+      "parent": "c0824bd21bd189aa",
+      "child": "b01f96f968131512",
+      "type": "evident-by",
+      "metadata": {
+        "kind": "primary"
+      }
+    },
+    {
+      "parent": "f79b1ddb7b6f7884",
+      "child": "f46edc24fe54d236",
+      "type": "evident-by",
+      "metadata": {
+        "kind": "primary"
+      }
+    }
+  ],
+  "files": [
+    {
+      "id": "b01f96f968131512",
+      "location": {
+        "path": "/wp-content/themes/twentynineteen/package-lock.json"
+      },
+      "metadata": {
+        "mode": 644,
+        "type": "RegularFile",
+        "userID": 1000,
+        "groupID": 1000,
+        "mimeType": "application/json",
+        "size": 253085
+      },
+      "digests": [
+        {
+          "algorithm": "sha1",
+          "value": "a3198b176186b9e5afa45231efc4391d684a7d57"
+        },
+        {
+          "algorithm": "sha256",
+          "value": "998795a4711a978fcc74a5aaa9c3b764c400e1baf8896a428b2658653429fa76"
+        }
+      ]
+    },
+    {
+      "id": "e27d9ad5e3d99249",
+      "location": {
+        "path": "/wp-content/themes/twentytwenty/package-lock.json"
+      },
+      "metadata": {
+        "mode": 644,
+        "type": "RegularFile",
+        "userID": 1000,
+        "groupID": 1000,
+        "mimeType": "application/json",
+        "size": 1215462
+      },
+      "digests": [
+        {
+          "algorithm": "sha1",
+          "value": "186b0dd09938894546fc35446c9ecfacfa48ad31"
+        },
+        {
+          "algorithm": "sha256",
+          "value": "ec270a4d522a1b5c5b69f0b8fe5964316a6af7c41dcd1f1090b803a7df23804c"
+        }
+      ]
+    },
+    {
+      "id": "f46edc24fe54d236",
+      "location": {
+        "path": "/wp-content/themes/twentytwentyfive/package-lock.json"
+      },
+      "metadata": {
+        "mode": 644,
+        "type": "RegularFile",
+        "userID": 1000,
+        "groupID": 1000,
+        "mimeType": "application/json",
+        "size": 54180
+      },
+      "digests": [
+        {
+          "algorithm": "sha1",
+          "value": "70af49139037bfd34313982d9bc7c04f8706f7a4"
+        },
+        {
+          "algorithm": "sha256",
+          "value": "608110aa82e03301f6df2db16ac7b4d78549a95a28c97888257f3fb56315470d"
+        }
+      ]
+    },
+    {
+      "id": "53a8a5d39fb92953",
+      "location": {
+        "path": "/wp-content/themes/twentytwentyone/package-lock.json"
+      },
+      "metadata": {
+        "mode": 644,
+        "type": "RegularFile",
+        "userID": 1000,
+        "groupID": 1000,
+        "mimeType": "application/json",
+        "size": 639907
+      },
+      "digests": [
+        {
+          "algorithm": "sha1",
+          "value": "6bfb71d053312772cde26b08446387d454299b0b"
+        },
+        {
+          "algorithm": "sha256",
+          "value": "2d4ecb24963a29d23222d3e50302c5f6118b02438ee523e853b26e8d53b8583b"
+        }
+      ]
+    },
+    {
+      "id": "313cc630b374042f",
+      "location": {
+        "path": "/wp-content/themes/twentytwentytwo/package-lock.json"
+      },
+      "metadata": {
+        "mode": 644,
+        "type": "RegularFile",
+        "userID": 1000,
+        "groupID": 1000,
+        "mimeType": "application/json",
+        "size": 54178
+      },
+      "digests": [
+        {
+          "algorithm": "sha1",
+          "value": "10a7f0aa31571651702e76313e7ca426cefa29a9"
+        },
+        {
+          "algorithm": "sha256",
+          "value": "553db59b6fd4ba7a91510af9a54d404f7a056e8de87c887796c7c26f8526cec3"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "id": "0b6473facd8f33e69fdae34bb01adad2ee1db2ab6cdcd4b9549517a9aae27274",
+    "name": "/workspaces/Proyecto_ProdSoftware/data/repos/WordPress",
+    "version": "",
+    "type": "directory",
+    "metadata": {
+      "path": "/workspaces/Proyecto_ProdSoftware/data/repos/WordPress"
+    }
+  },
+  "distro": {},
+  "descriptor": {
+    "name": "syft",
+    "version": "1.44.0",
+    "configuration": {
+      "catalogers": {
+        "requested": {
+          "default": [
+            "directory",
+            "file"
+          ]
+        },
+        "used": [
+          "alpm-db-cataloger",
+          "apk-db-cataloger",
+          "binary-classifier-cataloger",
+          "cargo-auditable-binary-cataloger",
+          "cocoapods-cataloger",
+          "conan-cataloger",
+          "conda-meta-cataloger",
+          "dart-pubspec-cataloger",
+          "dart-pubspec-lock-cataloger",
+          "deb-archive-cataloger",
+          "dotnet-deps-binary-cataloger",
+          "dotnet-packages-lock-cataloger",
+          "dpkg-db-cataloger",
+          "elf-binary-package-cataloger",
+          "elixir-mix-lock-cataloger",
+          "erlang-otp-application-cataloger",
+          "erlang-rebar-lock-cataloger",
+          "file-content-cataloger",
+          "file-digest-cataloger",
+          "file-executable-cataloger",
+          "file-metadata-cataloger",
+          "gguf-cataloger",
+          "github-action-workflow-usage-cataloger",
+          "github-actions-usage-cataloger",
+          "go-module-binary-cataloger",
+          "go-module-file-cataloger",
+          "graalvm-native-image-cataloger",
+          "haskell-cataloger",
+          "homebrew-cataloger",
+          "java-archive-cataloger",
+          "java-gradle-lockfile-cataloger",
+          "java-jvm-cataloger",
+          "java-pom-cataloger",
+          "javascript-lock-cataloger",
+          "linux-kernel-cataloger",
+          "lua-rock-cataloger",
+          "nix-cataloger",
+          "opam-cataloger",
+          "pe-binary-package-cataloger",
+          "php-composer-lock-cataloger",
+          "php-interpreter-cataloger",
+          "php-pear-serialized-cataloger",
+          "portage-cataloger",
+          "python-installed-package-cataloger",
+          "python-package-cataloger",
+          "r-package-cataloger",
+          "rpm-archive-cataloger",
+          "rpm-db-cataloger",
+          "ruby-gemfile-cataloger",
+          "ruby-gemspec-cataloger",
+          "rust-cargo-lock-cataloger",
+          "snap-cataloger",
+          "swift-package-manager-cataloger",
+          "swipl-pack-cataloger",
+          "terraform-lock-cataloger",
+          "wordpress-plugins-cataloger"
+        ]
+      },
+      "data-generation": {
+        "generate-cpes": true
+      },
+      "files": {
+        "content": {
+          "globs": null,
+          "skip-files-above-size": 0
+        },
+        "hashers": [
+          "sha-1",
+          "sha-256"
+        ],
+        "selection": "owned-by-package"
+      },
+      "licenses": {
+        "coverage": 75,
+        "include-content": "none"
+      },
+      "packages": {
+        "binary": [
+          "python-binary",
+          "python-binary-lib",
+          "pypy-binary-lib",
+          "go-binary",
+          "julia-binary",
+          "helm",
+          "redis-binary",
+          "valkey-binary",
+          "nodejs-binary",
+          "busybox-binary",
+          "util-linux-binary",
+          "haproxy-binary",
+          "perl-binary",
+          "php-composer-binary",
+          "httpd-binary",
+          "memcached-binary",
+          "traefik-binary",
+          "arangodb-binary",
+          "postgresql-binary",
+          "mysql-binary",
+          "mysql-binary",
+          "mysql-binary",
+          "xtrabackup-binary",
+          "mariadb-binary",
+          "rust-standard-library-linux",
+          "rust-standard-library-macos",
+          "ruby-binary",
+          "erlang-binary",
+          "erlang-alpine-binary",
+          "erlang-library",
+          "swipl-binary",
+          "dart-binary",
+          "deno-binary",
+          "haskell-ghc-binary",
+          "haskell-cabal-binary",
+          "haskell-stack-binary",
+          "consul-binary",
+          "hashicorp-vault-binary",
+          "nginx-binary",
+          "bash-binary",
+          "openssl-binary",
+          "openldap-search-binary",
+          "qt-qtbase-lib",
+          "gcc-binary",
+          "fluent-bit-binary",
+          "wordpress-cli-binary",
+          "curl-binary",
+          "lighttpd-binary",
+          "proftpd-binary",
+          "zstd-binary",
+          "xz-binary",
+          "gzip-binary",
+          "sqlcipher-binary",
+          "jq-binary",
+          "chrome-binary",
+          "ffmpeg-binary",
+          "ffmpeg-library",
+          "ffmpeg-library",
+          "elixir-binary",
+          "elixir-library",
+          "istio-binary",
+          "istio-binary",
+          "grafana-binary",
+          "grafana-binary",
+          "envoy-binary",
+          "mongodb-binary",
+          "java-binary",
+          "java-jdb-binary"
+        ],
+        "dotnet": {
+          "dep-packages-must-claim-dll": true,
+          "dep-packages-must-have-dll": false,
+          "exclude-project-references": true,
+          "propagate-dll-claims-to-parents": true,
+          "relax-dll-claims-when-bundling-detected": true
+        },
+        "golang": {
+          "local-mod-cache-dir": "/home/vscode/go/pkg/mod",
+          "local-vendor-dir": "",
+          "main-module-version": {
+            "from-build-settings": true,
+            "from-contents": false,
+            "from-ld-flags": true
+          },
+          "proxies": [
+            "https://proxy.golang.org",
+            "direct"
+          ],
+          "search-local-mod-cache-licenses": false,
+          "search-local-vendor-licenses": false,
+          "search-remote-licenses": false,
+          "use-packages-lib": true
+        },
+        "java-archive": {
+          "include-indexed-archives": true,
+          "include-unindexed-archives": false,
+          "maven-base-url": "https://repo1.maven.org/maven2",
+          "maven-localrepository-dir": "/home/vscode/.m2/repository",
+          "max-parent-recursive-depth": 0,
+          "resolve-transitive-dependencies": false,
+          "use-maven-localrepository": false,
+          "use-network": false
+        },
+        "javascript": {
+          "include-dev-dependencies": false,
+          "npm-base-url": "https://registry.npmjs.org",
+          "search-remote-licenses": false
+        },
+        "linux-kernel": {
+          "catalog-modules": true
+        },
+        "nix": {
+          "capture-owned-files": false
+        },
+        "python": {
+          "guess-unpinned-requirements": false,
+          "pypi-base-url": "https://pypi.org/pypi",
+          "search-remote-licenses": false
+        }
+      },
+      "relationships": {
+        "exclude-binary-packages-with-file-ownership-overlap": true,
+        "package-file-ownership": true,
+        "package-file-ownership-overlap": true
+      },
+      "search": {
+        "scope": "squashed"
+      }
+    }
+  },
+  "schema": {
+    "version": "16.1.3",
+    "url": "https://raw.githubusercontent.com/anchore/syft/main/schema/json/schema-16.1.3.json"
+  }
+}

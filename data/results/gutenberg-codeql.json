@@ -1,0 +1,3414 @@
+{
+  "total_issues": 241,
+  "issues_by_severity": {
+    "error": 0,
+    "warning": 241,
+    "note": 0
+  },
+  "issues": [
+    {
+      "rule_id": "js/weak-cryptographic-algorithm",
+      "rule_index": 8,
+      "level": "warning",
+      "message": "[A broken or weak cryptographic algorithm](1) depends on [sensitive data from an access to sessionId](2).\n[A broken or weak cryptographic algorithm](1) depends on [sensitive data from an access to sessionId](3).",
+      "file": "packages/react-native-editor/__device-tests__/helpers/utils.js",
+      "region": {
+        "startLine": 190,
+        "startColumn": 13,
+        "endColumn": 22
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/insecure-randomness",
+      "rule_index": 13,
+      "level": "warning",
+      "message": "This uses a cryptographically insecure random number generated at [Math.random()](1) in a security context.",
+      "file": "packages/interactivity/src/utils.ts",
+      "region": {
+        "startLine": 521,
+        "startColumn": 26,
+        "endColumn": 65
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-regexp-character-escape",
+      "rule_index": 31,
+      "level": "warning",
+      "message": "The escape sequence '\\-' is equivalent to just '-', so the sequence may still represent a meta-character when it is used in a [regular expression](1).",
+      "file": "tools/release/commands/changelog.js",
+      "region": {
+        "startLine": 643,
+        "startColumn": 51,
+        "endColumn": 53
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/incomplete-hostname-regexp",
+      "rule_index": 32,
+      "level": "warning",
+      "message": "This regular expression has an unrestricted wildcard '.+' which may cause 'imgur\\.com' to be matched anywhere in the URL, outside the hostname.",
+      "file": "packages/block-library/src/embed/variations.js",
+      "region": {
+        "startLine": 198,
+        "startColumn": 16,
+        "endColumn": 49
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/incomplete-hostname-regexp",
+      "rule_index": 32,
+      "level": "warning",
+      "message": "This regular expression has an unrestricted wildcard '.+' which may cause 'smugmug\\.com' to be matched anywhere in the URL, outside the hostname.",
+      "file": "packages/block-library/src/embed/variations.js",
+      "region": {
+        "startLine": 267,
+        "startColumn": 16,
+        "endColumn": 51
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/incomplete-hostname-regexp",
+      "rule_index": 32,
+      "level": "warning",
+      "message": "This regular expression has an unrestricted wildcard '.+' which may cause 'tumblr\\.com' to be matched anywhere in the URL, outside the hostname.",
+      "file": "packages/block-library/src/embed/variations.js",
+      "region": {
+        "startLine": 305,
+        "startColumn": 16,
+        "endColumn": 49
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/incomplete-url-substring-sanitization",
+      "rule_index": 36,
+      "level": "warning",
+      "message": "'[youtube.com](1)' can be anywhere in the URL, and arbitrary hosts may come before or after it.",
+      "file": "packages/block-library/src/cover/embed-video-utils.js",
+      "region": {
+        "startLine": 107,
+        "startColumn": 3,
+        "endColumn": 37
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/incomplete-url-substring-sanitization",
+      "rule_index": 36,
+      "level": "warning",
+      "message": "'[vimeo.com](1)' can be anywhere in the URL, and arbitrary hosts may come before or after it.",
+      "file": "packages/block-library/src/cover/embed-video-utils.js",
+      "region": {
+        "startLine": 112,
+        "startColumn": 7,
+        "endColumn": 39
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/incomplete-url-substring-sanitization",
+      "rule_index": 36,
+      "level": "warning",
+      "message": "'[videopress.com](1)' can be anywhere in the URL, and arbitrary hosts may come before or after it.",
+      "file": "packages/block-library/src/cover/embed-video-utils.js",
+      "region": {
+        "startLine": 115,
+        "startColumn": 7,
+        "endColumn": 44
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/incomplete-url-substring-sanitization",
+      "rule_index": 36,
+      "level": "warning",
+      "message": "'[animoto.com](1)' can be anywhere in the URL, and arbitrary hosts may come before or after it.",
+      "file": "packages/block-library/src/cover/embed-video-utils.js",
+      "region": {
+        "startLine": 118,
+        "startColumn": 7,
+        "endColumn": 41
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/incomplete-url-substring-sanitization",
+      "rule_index": 36,
+      "level": "warning",
+      "message": "'[tiktok.com](1)' can be anywhere in the URL, and arbitrary hosts may come before or after it.",
+      "file": "packages/block-library/src/cover/embed-video-utils.js",
+      "region": {
+        "startLine": 121,
+        "startColumn": 7,
+        "endColumn": 40
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/incomplete-url-substring-sanitization",
+      "rule_index": 36,
+      "level": "warning",
+      "message": "'[https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Cookie/SameSite](1)' can be anywhere in the URL, and arbitrary hosts may come before or after it.",
+      "file": "packages/e2e-test-utils-playwright/src/test.ts",
+      "region": {
+        "startLine": 67,
+        "startColumn": 3,
+        "endLine": 69,
+        "endColumn": 4
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/shell-command-injection-from-environment",
+      "rule_index": 48,
+      "level": "warning",
+      "message": "This shell command depends on an uncontrolled [absolute path](1).\nThis shell command depends on an uncontrolled [absolute path](2).\nThis shell command depends on an uncontrolled [absolute path](3).",
+      "file": "packages/react-native-editor/bin/extract-used-strings.js",
+      "region": {
+        "startLine": 139,
+        "startColumn": 4,
+        "endColumn": 69
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/shell-command-injection-from-environment",
+      "rule_index": 48,
+      "level": "warning",
+      "message": "This shell command depends on an uncontrolled [absolute path](1).\nThis shell command depends on an uncontrolled [absolute path](2).\nThis shell command depends on an uncontrolled [absolute path](3).\nThis shell command depends on an uncontrolled [absolute path](4).",
+      "file": "packages/scripts/scripts/test/build-blocks-manifest.js",
+      "region": {
+        "startLine": 39,
+        "startColumn": 4,
+        "endColumn": 73
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/shell-command-injection-from-environment",
+      "rule_index": 48,
+      "level": "warning",
+      "message": "This shell command depends on an uncontrolled [absolute path](1).\nThis shell command depends on an uncontrolled [absolute path](2).\nThis shell command depends on an uncontrolled [absolute path](3).\nThis shell command depends on an uncontrolled [absolute path](4).",
+      "file": "packages/scripts/scripts/test/build-blocks-manifest.js",
+      "region": {
+        "startLine": 58,
+        "startColumn": 5,
+        "endColumn": 79
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/shell-command-injection-from-environment",
+      "rule_index": 48,
+      "level": "warning",
+      "message": "This shell command depends on an uncontrolled [absolute path](1).\nThis shell command depends on an uncontrolled [absolute path](2).\nThis shell command depends on an uncontrolled [absolute path](3).\nThis shell command depends on an uncontrolled [absolute path](4).",
+      "file": "packages/scripts/scripts/test/build-blocks-manifest.js",
+      "region": {
+        "startLine": 87,
+        "startColumn": 5,
+        "endColumn": 85
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/shell-command-injection-from-environment",
+      "rule_index": 48,
+      "level": "warning",
+      "message": "This shell command depends on an uncontrolled [absolute path](1).\nThis shell command depends on an uncontrolled [absolute path](2).\nThis shell command depends on an uncontrolled [absolute path](3).\nThis shell command depends on an uncontrolled [absolute path](4).\nThis shell command depends on an uncontrolled [absolute path](5).\nThis shell command depends on an uncontrolled [absolute path](6).",
+      "file": "packages/stylelint-config/test/utils/index.js",
+      "region": {
+        "startLine": 21,
+        "startColumn": 12,
+        "endColumn": 48
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/shell-command-injection-from-environment",
+      "rule_index": 48,
+      "level": "warning",
+      "message": "This shell command depends on an uncontrolled [absolute path](1).\nThis shell command depends on an uncontrolled [absolute path](2).\nThis shell command depends on an uncontrolled [absolute path](3).",
+      "file": "packages/theme/src/stylelint-plugins/test/utils/index.ts",
+      "region": {
+        "startLine": 20,
+        "startColumn": 11,
+        "endColumn": 59
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/shell-command-injection-from-environment",
+      "rule_index": 48,
+      "level": "warning",
+      "message": "This shell command depends on an uncontrolled [file name](1).",
+      "file": "tools/release/lib/utils.js",
+      "region": {
+        "startLine": 29,
+        "startColumn": 4,
+        "endColumn": 10
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/xss-through-dom",
+      "rule_index": 60,
+      "level": "warning",
+      "message": "[DOM text](1) is reinterpreted as HTML without escaping meta-characters.",
+      "file": "packages/html-entities/src/index.ts",
+      "region": {
+        "startLine": 38,
+        "startColumn": 30,
+        "endColumn": 34
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/incomplete-sanitization",
+      "rule_index": 61,
+      "level": "warning",
+      "message": "This replaces only the first occurrence of /\\['\\u2019\\]/.",
+      "file": "packages/components/src/utils/strings.ts",
+      "region": {
+        "startLine": 43,
+        "startColumn": 10,
+        "endColumn": 23
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/incomplete-sanitization",
+      "rule_index": 61,
+      "level": "warning",
+      "message": "This replaces only the first occurrence of '}}'.",
+      "file": "packages/global-styles-engine/src/core/render.tsx",
+      "region": {
+        "startLine": 1986,
+        "startColumn": 22,
+        "endColumn": 34
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/incomplete-sanitization",
+      "rule_index": 61,
+      "level": "warning",
+      "message": "This does not escape backslash characters in the input.",
+      "file": "packages/i18n/tools/pot-to-php.js",
+      "region": {
+        "startLine": 31,
+        "startColumn": 9,
+        "endColumn": 22
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/incomplete-sanitization",
+      "rule_index": 61,
+      "level": "warning",
+      "message": "This does not escape backslash characters in the input.",
+      "file": "packages/icons/lib/generate-manifest-php.cjs",
+      "region": {
+        "startLine": 17,
+        "startColumn": 9,
+        "endColumn": 20
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/incomplete-sanitization",
+      "rule_index": 61,
+      "level": "warning",
+      "message": "This does not escape backslash characters in the input.",
+      "file": "packages/interactivity-router/src/assets/dynamic-importmap/loader.ts",
+      "region": {
+        "startLine": 82,
+        "startColumn": 14,
+        "endColumn": 25
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/incomplete-sanitization",
+      "rule_index": 61,
+      "level": "warning",
+      "message": "This replaces only the first occurrence of '*'.",
+      "file": "packages/media-utils/src/components/media-upload-modal/index.tsx",
+      "region": {
+        "startLine": 588,
+        "startColumn": 11,
+        "endColumn": 30
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/incomplete-multi-character-sanitization",
+      "rule_index": 63,
+      "level": "warning",
+      "message": "This string may still contain [<script](1), which may cause an HTML element injection vulnerability.",
+      "file": "packages/block-editor/src/components/rich-text/native/index.native.js",
+      "region": {
+        "startLine": 530,
+        "startColumn": 24,
+        "endLine": 531,
+        "endColumn": 31
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/incomplete-multi-character-sanitization",
+      "rule_index": 63,
+      "level": "warning",
+      "message": "This string may still contain [<script](1), which may cause an HTML element injection vulnerability.",
+      "file": "packages/format-library/src/link/index.js",
+      "region": {
+        "startLine": 236,
+        "startColumn": 22,
+        "endLine": 237,
+        "endColumn": 30
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/bad-tag-filter",
+      "rule_index": 65,
+      "level": "warning",
+      "message": "This regular expression does not match script end tags like </script >.",
+      "file": "packages/asset-loader/src/index.ts",
+      "region": {
+        "startLine": 309,
+        "startColumn": 6,
+        "endColumn": 36
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/redos",
+      "rule_index": 82,
+      "level": "warning",
+      "message": "This part of the regular expression may cause exponential backtracking on strings starting with '<!--\\twp:image\\t{{' and containing many repetitions of '|'.",
+      "file": "packages/block-library/src/post-featured-image/edit.js",
+      "region": {
+        "startLine": 131,
+        "startColumn": 50,
+        "endColumn": 55
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/redos",
+      "rule_index": 82,
+      "level": "warning",
+      "message": "This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '|'.",
+      "file": "packages/block-serialization-default-parser/src/index.ts",
+      "region": {
+        "startLine": 72,
+        "startColumn": 69,
+        "endColumn": 74
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/redos",
+      "rule_index": 82,
+      "level": "warning",
+      "message": "This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '//\"'.",
+      "file": "packages/interactivity-router/src/assets/dynamic-importmap/loader.ts",
+      "region": {
+        "startLine": 233,
+        "startColumn": 54,
+        "endColumn": 60
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/polynomial-redos",
+      "rule_index": 83,
+      "level": "warning",
+      "message": "This [regular expression](1) that depends on [library input](2) may run slow on strings starting with '<script' and with many repetitions of '<script='.\nThis [regular expression](3) that depends on [library input](2) may run slow on strings starting with '<script>' and with many repetitions of '<script>a'.",
+      "file": "packages/asset-loader/src/index.ts",
+      "region": {
+        "startLine": 308,
+        "startColumn": 24,
+        "endLine": 310,
+        "endColumn": 5
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/polynomial-redos",
+      "rule_index": 83,
+      "level": "warning",
+      "message": "This [regular expression](1) that depends on [library input](2) may run slow on strings starting with '<style' and with many repetitions of '<style'.\nThis [regular expression](3) that depends on [library input](2) may run slow on strings starting with '<style>' and with many repetitions of '<style>'.",
+      "file": "packages/autop/src/index.ts",
+      "region": {
+        "startLine": 358,
+        "startColumn": 10,
+        "endLine": 364,
+        "endColumn": 4
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/polynomial-redos",
+      "rule_index": 83,
+      "level": "warning",
+      "message": "This [regular expression](1) that depends on [library input](2) may run slow on strings starting with '<pre' and with many repetitions of '<pre'.\nThis [regular expression](3) that depends on [library input](2) may run slow on strings starting with '<pre>' and with many repetitions of '<pre>'.",
+      "file": "packages/autop/src/index.ts",
+      "region": {
+        "startLine": 370,
+        "startColumn": 10,
+        "endLine": 374,
+        "endColumn": 6
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/polynomial-redos",
+      "rule_index": 83,
+      "level": "warning",
+      "message": "This [regular expression](1) that depends on [library input](2) may run slow on strings starting with '\\[caption' and with many repetitions of '\\[caption'.",
+      "file": "packages/autop/src/index.ts",
+      "region": {
+        "startLine": 380,
+        "startColumn": 10,
+        "endLine": 384,
+        "endColumn": 6
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/polynomial-redos",
+      "rule_index": 83,
+      "level": "warning",
+      "message": "This [regular expression](1) that depends on [library input](2) may run slow on strings starting with '<br' and with many repetitions of '<br='.",
+      "file": "packages/autop/src/index.ts",
+      "region": {
+        "startLine": 381,
+        "startColumn": 11,
+        "endLine": 382,
+        "endColumn": 49
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/polynomial-redos",
+      "rule_index": 83,
+      "level": "warning",
+      "message": "This [regular expression](1) that depends on [library input](2) may run slow on strings starting with '<' and with many repetitions of '<'.",
+      "file": "packages/block-editor/src/components/rich-text/native/index.native.js",
+      "region": {
+        "startLine": 530,
+        "startColumn": 24,
+        "endLine": 531,
+        "endColumn": 31
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/polynomial-redos",
+      "rule_index": 83,
+      "level": "warning",
+      "message": "This [regular expression](1) that depends on [library input](2) may run slow on strings starting with '<a' and with many repetitions of '<a'.\nThis [regular expression](1) that depends on [library input](3) may run slow on strings starting with '<a' and with many repetitions of '<a'.\nThis [regular expression](1) that depends on [library input](4) may run slow on strings starting with '<a' and with many repetitions of '<a'.",
+      "file": "packages/block-library/src/utils/remove-anchor-tag.js",
+      "region": {
+        "startLine": 10,
+        "startColumn": 9,
+        "endColumn": 55
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/polynomial-redos",
+      "rule_index": 83,
+      "level": "warning",
+      "message": "This [regular expression](1) that depends on [library input](2) may run slow on strings with many repetitions of '|'.\nThis [regular expression](3) that depends on [library input](2) may run slow on strings starting with '<!--\\twp:a\\t{{' and with many repetitions of '<!--\\twp:a\\t{{a'.\nThis [regular expression](1) that depends on [library input](4) may run slow on strings with many repetitions of '|'.\nThis [regular expression](3) that depends on [library input](4) may run slow on strings starting with '<!--\\twp:a\\t{{' and with many repetitions of '<!--\\twp:a\\t{{a'.\nThis [regular expression](1) that depends on [library input](5) may run slow on strings with many repetitions of '|'.\nThis [regular expression](3) that depends on [library input](5) may run slow on strings starting with '<!--\\twp:a\\t{{' and with many repetitions of '<!--\\twp:a\\t{{a'.\nThis [regular expression](1) that depends on [library input](6) may run slow on strings with many repetitions of '|'.\nThis [regular expression](3) that depends on [library input](6) may run slow on strings starting with '<!--\\twp:a\\t{{' and with many repetitions of '<!--\\twp:a\\t{{a'.\nThis [regular expression](1) that depends on [library input](7) may run slow on strings with many repetitions of '|'.\nThis [regular expression](3) that depends on [library input](7) may run slow on strings starting with '<!--\\twp:a\\t{{' and with many repetitions of '<!--\\twp:a\\t{{a'.\nThis [regular expression](1) that depends on [library input](8) may run slow on strings with many repetitions of '|'.\nThis [regular expression](3) that depends on [library input](8) may run slow on strings starting with '<!--\\twp:a\\t{{' and with many repetitions of '<!--\\twp:a\\t{{a'.\nThis [regular expression](1) that depends on [library input](9) may run slow on strings with many repetitions of '|'.\nThis [regular expression](3) that depends on [library input](9) may run slow on strings starting with '<!--\\twp:a\\t{{' and with many repetitions of '<!--\\twp:a\\t{{a'.\nThis [regular expression](1) that depends on [library input](10) may run slow on strings with many repetitions of '|'.\nThis [regular expression](3) that depends on [library input](10) may run slow on strings starting with '<!--\\twp:a\\t{{' and with many repetitions of '<!--\\twp:a\\t{{a'.",
+      "file": "packages/block-serialization-default-parser/src/index.ts",
+      "region": {
+        "startLine": 386,
+        "startColumn": 18,
+        "endColumn": 44
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/polynomial-redos",
+      "rule_index": 83,
+      "level": "warning",
+      "message": "This [regular expression](1) that depends on [library input](2) may run slow on strings starting with '<meta' and with many repetitions of '<meta'.\nThis [regular expression](1) that depends on [library input](3) may run slow on strings starting with '<meta' and with many repetitions of '<meta'.",
+      "file": "packages/blocks/src/api/raw-handling/paste-handler.ts",
+      "region": {
+        "startLine": 103,
+        "startColumn": 9,
+        "endColumn": 43
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/polynomial-redos",
+      "rule_index": 83,
+      "level": "warning",
+      "message": "This [regular expression](1) that depends on [library input](2) may run slow on strings with many repetitions of '\\n'.\nThis [regular expression](1) that depends on [library input](3) may run slow on strings with many repetitions of '\\n'.",
+      "file": "packages/blocks/src/api/raw-handling/paste-handler.ts",
+      "region": {
+        "startLine": 256,
+        "startColumn": 28,
+        "endColumn": 62
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/polynomial-redos",
+      "rule_index": 83,
+      "level": "warning",
+      "message": "This [regular expression](1) that depends on [library input](2) may run slow on strings with many repetitions of '\\n'.\nThis [regular expression](1) that depends on [library input](3) may run slow on strings with many repetitions of '\\n'.",
+      "file": "packages/blocks/src/api/raw-handling/paste-handler.ts",
+      "region": {
+        "startLine": 262,
+        "startColumn": 11,
+        "endLine": 268,
+        "endColumn": 30
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/polynomial-redos",
+      "rule_index": 83,
+      "level": "warning",
+      "message": "This [regular expression](1) that depends on [library input](2) may run slow on strings with many repetitions of '-'.\nThis [regular expression](1) that depends on [library input](3) may run slow on strings with many repetitions of '-'.\nThis [regular expression](1) that depends on [library input](4) may run slow on strings with many repetitions of '-'.\nThis [regular expression](1) that depends on [library input](5) may run slow on strings with many repetitions of '-'.\nThis [regular expression](1) that depends on [library input](6) may run slow on strings with many repetitions of '-'.\nThis [regular expression](1) that depends on [library input](7) may run slow on strings with many repetitions of '-'.\nThis [regular expression](1) that depends on [library input](8) may run slow on strings with many repetitions of '-'.\nThis [regular expression](1) that depends on [library input](9) may run slow on strings with many repetitions of '-'.\nThis [regular expression](1) that depends on [library input](10) may run slow on strings with many repetitions of '-'.\nThis [regular expression](1) that depends on [library input](11) may run slow on strings with many repetitions of '-'.\nThis [regular expression](1) that depends on [library input](12) may run slow on strings with many repetitions of '-'.",
+      "file": "packages/env/lib/config/load-config.js",
+      "region": {
+        "startLine": 183,
+        "startColumn": 9,
+        "endColumn": 77
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/polynomial-redos",
+      "rule_index": 83,
+      "level": "warning",
+      "message": "This [regular expression](1) that depends on [library input](2) may run slow on strings with many repetitions of '\\t'.",
+      "file": "packages/global-styles-engine/src/core/render.tsx",
+      "region": {
+        "startLine": 1996,
+        "startColumn": 20,
+        "endColumn": 68
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/polynomial-redos",
+      "rule_index": 83,
+      "level": "warning",
+      "message": "This [regular expression](1) that depends on [library input](2) may run slow on strings starting with 'A' and with many repetitions of 'A'.",
+      "file": "packages/rich-text/src/register-format-type.js",
+      "region": {
+        "startLine": 76,
+        "startColumn": 9,
+        "endColumn": 64
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/polynomial-redos",
+      "rule_index": 83,
+      "level": "warning",
+      "message": "This [regular expression](1) that depends on [library input](2) may run slow on strings starting with '!:!' and with many repetitions of '!!'.\nThis [regular expression](1) that depends on [library input](3) may run slow on strings starting with '!:!' and with many repetitions of '!!'.\nThis [regular expression](1) that depends on [library input](4) may run slow on strings starting with '!:!' and with many repetitions of '!!'.",
+      "file": "packages/url/src/get-authority.ts",
+      "region": {
+        "startLine": 15,
+        "startColumn": 18,
+        "endLine": 17,
+        "endColumn": 3
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/polynomial-redos",
+      "rule_index": 83,
+      "level": "warning",
+      "message": "This [regular expression](1) that depends on [library input](2) may run slow on strings starting with '!:!/!' and with many repetitions of '!!'.\nThis [regular expression](1) that depends on [library input](3) may run slow on strings starting with '!:!/!' and with many repetitions of '!!'.\nThis [regular expression](1) that depends on [library input](4) may run slow on strings starting with '!:!/!' and with many repetitions of '!!'.\nThis [regular expression](1) that depends on [library input](5) may run slow on strings starting with '!:!/!' and with many repetitions of '!!'.",
+      "file": "packages/url/src/get-path.ts",
+      "region": {
+        "startLine": 16,
+        "startColumn": 3,
+        "endColumn": 74
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unsafe-code-construction",
+      "rule_index": 87,
+      "level": "warning",
+      "message": "This string concatenation which depends on [library input](1) is later [interpreted as code](2).",
+      "file": "packages/asset-loader/src/index.ts",
+      "region": {
+        "startLine": 108,
+        "startColumn": 43,
+        "endColumn": 49
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/remote-property-injection",
+      "rule_index": 90,
+      "level": "warning",
+      "message": "A property name to write to depends on a [user-provided value](1).\nA property name to write to depends on a [user-provided value](2).",
+      "file": "packages/url/src/get-query-args.ts",
+      "region": {
+        "startLine": 38,
+        "startColumn": 11,
+        "endColumn": 14
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/remote-property-injection",
+      "rule_index": 90,
+      "level": "warning",
+      "message": "A property name to write to depends on a [user-provided value](1).\nA property name to write to depends on a [user-provided value](2).",
+      "file": "packages/url/src/get-query-args.ts",
+      "region": {
+        "startLine": 49,
+        "startColumn": 12,
+        "endColumn": 15
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/missing-origin-check",
+      "rule_index": 91,
+      "level": "warning",
+      "message": "Postmessage handler has no origin check.",
+      "file": "packages/worker-threads/src/worker-thread.ts",
+      "region": {
+        "startLine": 20,
+        "startColumn": 21,
+        "endColumn": 26
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/regex/missing-regexp-anchor",
+      "rule_index": 92,
+      "level": "warning",
+      "message": "When this is used as a regular expression on a URL, it may match anywhere, and arbitrary hosts may come before or after it.",
+      "file": "packages/block-editor/src/components/link-control/test/index.js",
+      "region": {
+        "startLine": 2908,
+        "startColumn": 10,
+        "endColumn": 37
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/regex/missing-regexp-anchor",
+      "rule_index": 92,
+      "level": "warning",
+      "message": "When this is used as a regular expression on a URL, it may match anywhere, and arbitrary hosts may come before or after it.",
+      "file": "packages/block-editor/src/components/link-control/test/index.js",
+      "region": {
+        "startLine": 3313,
+        "startColumn": 19,
+        "endColumn": 45
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/regex/missing-regexp-anchor",
+      "rule_index": 92,
+      "level": "warning",
+      "message": "When this is used as a regular expression on a URL, it may match anywhere, and arbitrary hosts may come before or after it.",
+      "file": "packages/block-editor/src/components/link-control/test/index.js",
+      "region": {
+        "startLine": 3319,
+        "startColumn": 19,
+        "endColumn": 40
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/regex/missing-regexp-anchor",
+      "rule_index": 92,
+      "level": "warning",
+      "message": "Misleading operator precedence. The subexpression 'h(\\[1-6\\])$' is anchored at the end, but the other parts of this regular expression are not",
+      "file": "packages/block-editor/src/components/rich-text/native/index.native.js",
+      "region": {
+        "startLine": 1075,
+        "startColumn": 23,
+        "endColumn": 40
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/regex/missing-regexp-anchor",
+      "rule_index": 92,
+      "level": "warning",
+      "message": "When this is used as a regular expression on a URL, it may match anywhere, and arbitrary hosts may come before or after it.",
+      "file": "packages/block-library/src/image/test/edit.native.js",
+      "region": {
+        "startLine": 244,
+        "startColumn": 36,
+        "endColumn": 58
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/indirect-command-line-injection",
+      "rule_index": 95,
+      "level": "warning",
+      "message": "This command depends on an unsanitized [command-line argument](1).\nThis command depends on an unsanitized [command-line argument](2).",
+      "file": "packages/react-native-editor/bin/extract-used-strings.js",
+      "region": {
+        "startLine": 139,
+        "startColumn": 4,
+        "endColumn": 69
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/insecure-temporary-file",
+      "rule_index": 96,
+      "level": "warning",
+      "message": "Insecure creation of file in [the os temp dir](1).",
+      "file": "tools/release/commands/performance.js",
+      "region": {
+        "startLine": 419,
+        "startColumn": 4,
+        "endColumn": 19
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/file-system-race",
+      "rule_index": 97,
+      "level": "warning",
+      "message": "The file may have changed since it [was checked](1).",
+      "file": "bin/packages/generate-worker-placeholders.mjs",
+      "region": {
+        "startLine": 67,
+        "startColumn": 12,
+        "endColumn": 59
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/file-system-race",
+      "rule_index": 97,
+      "level": "warning",
+      "message": "The file may have changed since it [was checked](1).",
+      "file": "packages/icons/lib/validate-collection.cjs",
+      "region": {
+        "startLine": 25,
+        "startColumn": 32,
+        "endColumn": 64
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/file-system-race",
+      "rule_index": 97,
+      "level": "warning",
+      "message": "The file may have changed since it [was checked](1).",
+      "file": "packages/wp-build/lib/worker-build.mjs",
+      "region": {
+        "startLine": 134,
+        "startColumn": 9,
+        "endColumn": 56
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/file-system-race",
+      "rule_index": 97,
+      "level": "warning",
+      "message": "The file may have changed since it [was checked](1).",
+      "file": "tools/validation/check-installed-deps.mjs",
+      "region": {
+        "startLine": 79,
+        "startColumn": 3,
+        "endColumn": 43
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/file-system-race",
+      "rule_index": 97,
+      "level": "warning",
+      "message": "The file may have changed since it [was checked](1).",
+      "file": "tools/validation/check-installed-deps.mjs",
+      "region": {
+        "startLine": 80,
+        "startColumn": 3,
+        "endColumn": 50
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This use of variable 'parse' always evaluates to false.",
+      "file": "packages/api-fetch/src/middlewares/preloading.ts",
+      "region": {
+        "startLine": 142,
+        "startColumn": 4,
+        "endColumn": 9
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This negation always evaluates to true.",
+      "file": "packages/block-editor/src/components/colors-gradients/control.js",
+      "region": {
+        "startLine": 136,
+        "startColumn": 13,
+        "endColumn": 31
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This use of variable 'isAppender' always evaluates to true.",
+      "file": "packages/block-editor/src/components/media-placeholder/index.native.js",
+      "region": {
+        "startLine": 178,
+        "startColumn": 15,
+        "endColumn": 25
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This use of variable 'withSlider' always evaluates to true.",
+      "file": "packages/block-editor/src/components/text-indent-control/index.js",
+      "region": {
+        "startLine": 105,
+        "startColumn": 7,
+        "endColumn": 17
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This use of variable 'lightboxEnabled' always evaluates to true.",
+      "file": "packages/block-editor/src/components/url-popover/image-url-input-ui.js",
+      "region": {
+        "startLine": 262,
+        "startColumn": 26,
+        "endColumn": 41
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This expression always evaluates to true.",
+      "file": "packages/block-editor/src/components/url-popover/image-url-input-ui.js",
+      "region": {
+        "startLine": 307,
+        "startColumn": 15,
+        "endColumn": 37
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This use of variable 'url' always evaluates to true.",
+      "file": "packages/block-editor/src/components/url-popover/image-url-input-ui.js",
+      "region": {
+        "startLine": 307,
+        "startColumn": 15,
+        "endColumn": 18
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This negation always evaluates to true.",
+      "file": "packages/block-editor/src/components/url-popover/image-url-input-ui.js",
+      "region": {
+        "startLine": 307,
+        "startColumn": 22,
+        "endColumn": 37
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This use of variable 'icon' always evaluates to true.",
+      "file": "packages/block-editor/src/components/warning/index.native.js",
+      "region": {
+        "startLine": 53,
+        "startColumn": 14,
+        "endColumn": 18
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This negation always evaluates to true.",
+      "file": "packages/block-library/src/button/edit.native.js",
+      "region": {
+        "startLine": 451,
+        "startColumn": 24,
+        "endColumn": 41
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This negation always evaluates to true.",
+      "file": "packages/block-library/src/button/edit.native.js",
+      "region": {
+        "startLine": 464,
+        "startColumn": 24,
+        "endColumn": 41
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This use of variable 'contentStyle' always evaluates to true.",
+      "file": "packages/block-library/src/column/edit.native.js",
+      "region": {
+        "startLine": 148,
+        "startColumn": 3,
+        "endColumn": 15
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This use of variable 'useFeaturedImage' always evaluates to true.",
+      "file": "packages/block-library/src/cover/edit/index.js",
+      "region": {
+        "startLine": 651,
+        "startColumn": 34,
+        "endColumn": 50
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This negation always evaluates to true.",
+      "file": "packages/block-library/src/file/edit.native.js",
+      "region": {
+        "startLine": 400,
+        "startColumn": 6,
+        "endColumn": 23
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This negation always evaluates to true.",
+      "file": "packages/block-library/src/file/edit.native.js",
+      "region": {
+        "startLine": 408,
+        "startColumn": 6,
+        "endColumn": 23
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This negation always evaluates to true.",
+      "file": "packages/block-library/src/group/edit.native.js",
+      "region": {
+        "startLine": 69,
+        "startColumn": 6,
+        "endColumn": 22
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This use of variable 'style' always evaluates to true.",
+      "file": "packages/block-library/src/pullquote/deprecated.js",
+      "region": {
+        "startLine": 562,
+        "startColumn": 27,
+        "endColumn": 32
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This negation always evaluates to true.",
+      "file": "packages/block-library/src/search/edit.native.js",
+      "region": {
+        "startLine": 337,
+        "startColumn": 5,
+        "endColumn": 23
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This use of variable 'url' always evaluates to true.",
+      "file": "packages/block-library/src/social-link/edit.native.js",
+      "region": {
+        "startLine": 83,
+        "startColumn": 15,
+        "endColumn": 18
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This use of variable 'hasResolved' always evaluates to true.",
+      "file": "packages/block-library/src/template-part/edit/import-controls.js",
+      "region": {
+        "startLine": 81,
+        "startColumn": 7,
+        "endColumn": 18
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This use of variable 'currentValue' always evaluates to true.",
+      "file": "packages/components/src/color-palette/utils.ts",
+      "region": {
+        "startLine": 41,
+        "startColumn": 36,
+        "endColumn": 48
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This negation always evaluates to true.",
+      "file": "packages/components/src/mobile/bottom-sheet/bottom-sheet-navigation/navigation-screen.native.js",
+      "region": {
+        "startLine": 120,
+        "startColumn": 9,
+        "endColumn": 19
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This negation always evaluates to true.",
+      "file": "packages/dataviews/src/components/dataviews-pagination/index.tsx",
+      "region": {
+        "startLine": 47,
+        "startColumn": 3,
+        "endColumn": 16
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This negation always evaluates to true.",
+      "file": "packages/edit-post/src/components/layout/index.js",
+      "region": {
+        "startLine": 257,
+        "startColumn": 9,
+        "endColumn": 16
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This use of variable 'ALLOW_REUSABLE_BLOCKS' always evaluates to false.",
+      "file": "packages/edit-widgets/src/components/widget-areas-block-editor-provider/index.js",
+      "region": {
+        "startLine": 59,
+        "startColumn": 20,
+        "endColumn": 41
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This use of variable 'ALLOW_REUSABLE_BLOCKS' always evaluates to false.",
+      "file": "packages/edit-widgets/src/index.js",
+      "region": {
+        "startLine": 42,
+        "startColumn": 7,
+        "endColumn": 28
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This use of variable 'hasFixedToolbar' always evaluates to true.",
+      "file": "packages/editor/src/components/header/index.js",
+      "region": {
+        "startLine": 101,
+        "startColumn": 6,
+        "endColumn": 21
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This use of variable 'color' always evaluates to true.",
+      "file": "packages/format-library/src/text-color/inline.native.js",
+      "region": {
+        "startLine": 77,
+        "startColumn": 7,
+        "endColumn": 12
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This call to updatewindow always evaluates to false.",
+      "file": "packages/global-styles-ui/src/font-library/lib/inflate.js",
+      "region": {
+        "startLine": 2953,
+        "startColumn": 9,
+        "endLine": 2958,
+        "endColumn": 10
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This use of variable 'ret' always evaluates to false.",
+      "file": "packages/global-styles-ui/src/font-library/lib/inflate.js",
+      "region": {
+        "startLine": 3079,
+        "startColumn": 12,
+        "endColumn": 15
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This use of variable 'nativeGzipDecode' always evaluates to false.",
+      "file": "packages/global-styles-ui/src/font-library/lib/lib-font.browser.js",
+      "region": {
+        "startLine": 384,
+        "startColumn": 17,
+        "endColumn": 33
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This use of variable 'nativeBrotliDecode' always evaluates to false.",
+      "file": "packages/global-styles-ui/src/font-library/lib/lib-font.browser.js",
+      "region": {
+        "startLine": 447,
+        "startColumn": 15,
+        "endColumn": 33
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This call to useSetting always evaluates to true.",
+      "file": "packages/global-styles-ui/src/gradients-palette-panel.tsx",
+      "region": {
+        "startLine": 59,
+        "startColumn": 28,
+        "endColumn": 64
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This call to useSetting always evaluates to true.",
+      "file": "packages/global-styles-ui/src/gradients-palette-panel.tsx",
+      "region": {
+        "startLine": 60,
+        "startColumn": 29,
+        "endColumn": 66
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This call to useSetting always evaluates to true.",
+      "file": "packages/global-styles-ui/src/gradients-palette-panel.tsx",
+      "region": {
+        "startLine": 61,
+        "startColumn": 27,
+        "endColumn": 62
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This call to useSetting always evaluates to true.",
+      "file": "packages/global-styles-ui/src/preview-hooks.tsx",
+      "region": {
+        "startLine": 28,
+        "startColumn": 25,
+        "endColumn": 70
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This call to useSetting always evaluates to true.",
+      "file": "packages/global-styles-ui/src/preview-hooks.tsx",
+      "region": {
+        "startLine": 30,
+        "startColumn": 3,
+        "endColumn": 49
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This call to useSetting always evaluates to true.",
+      "file": "packages/global-styles-ui/src/preview-hooks.tsx",
+      "region": {
+        "startLine": 32,
+        "startColumn": 3,
+        "endColumn": 50
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This use of variable 'themeShadows' always evaluates to true.",
+      "file": "packages/global-styles-ui/src/shadows-panel.tsx",
+      "region": {
+        "startLine": 92,
+        "startColumn": 18,
+        "endColumn": 30
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This use of variable 'isEditableTree' always evaluates to true.",
+      "file": "packages/rich-text/src/to-tree.js",
+      "region": {
+        "startLine": 272,
+        "startColumn": 12,
+        "endColumn": 26
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/trivial-conditional",
+      "rule_index": 110,
+      "level": "warning",
+      "message": "This negation always evaluates to true.",
+      "file": "packages/upload-media/src/store/private-actions.ts",
+      "region": {
+        "startLine": 336,
+        "startColumn": 7,
+        "endColumn": 17
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/use-of-returnless-function",
+      "rule_index": 114,
+      "level": "warning",
+      "message": "the [function init](1) does not return anything, yet the return value is used.",
+      "file": "packages/block-library/src/footnotes/init.js",
+      "region": {
+        "startLine": 6,
+        "startColumn": 16,
+        "endColumn": 22
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/use-of-returnless-function",
+      "rule_index": 114,
+      "level": "warning",
+      "message": "the [anonymous function](1) does not return anything, yet the return value is used.",
+      "file": "packages/sync/src/test/performance.test.ts",
+      "region": {
+        "startLine": 281,
+        "startColumn": 19,
+        "endColumn": 28
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-assignment-to-property",
+      "rule_index": 121,
+      "level": "warning",
+      "message": "This write to property 'instances' is useless, since [another property write](1) always overrides it.",
+      "file": "packages/components/src/higher-order/with-filters/index.tsx",
+      "region": {
+        "startLine": 71,
+        "startColumn": 4,
+        "endColumn": 50
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-assignment-to-property",
+      "rule_index": 121,
+      "level": "warning",
+      "message": "This write to property '254' is useless, since [another property write](1) always overrides it.",
+      "file": "packages/global-styles-ui/src/font-library/lib/inflate.js",
+      "region": {
+        "startLine": 252,
+        "startColumn": 24,
+        "endColumn": 43
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-assignment-to-property",
+      "rule_index": 121,
+      "level": "warning",
+      "message": "This write to property 'reserved' is useless, since [another property write](1) always overrides it.",
+      "file": "packages/global-styles-ui/src/font-library/lib/lib-font.browser.js",
+      "region": {
+        "startLine": 3818,
+        "startColumn": 3,
+        "endColumn": 26
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-assignment-to-property",
+      "rule_index": 121,
+      "level": "warning",
+      "message": "This write to property 'reserved' is useless, since [another property write](1) always overrides it.",
+      "file": "packages/global-styles-ui/src/font-library/lib/lib-font.browser.js",
+      "region": {
+        "startLine": 3819,
+        "startColumn": 3,
+        "endColumn": 26
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-assignment-to-property",
+      "rule_index": 121,
+      "level": "warning",
+      "message": "This write to property 'reserved' is useless, since [another property write](1) always overrides it.",
+      "file": "packages/global-styles-ui/src/font-library/lib/lib-font.browser.js",
+      "region": {
+        "startLine": 3820,
+        "startColumn": 3,
+        "endColumn": 26
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/use-before-declaration",
+      "rule_index": 132,
+      "level": "warning",
+      "message": "Variable 'clientId' is used before its [declaration](1).",
+      "file": "packages/block-library/src/button/edit.native.js",
+      "region": {
+        "startLine": 110,
+        "startColumn": 5,
+        "endColumn": 13
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/use-before-declaration",
+      "rule_index": 132,
+      "level": "warning",
+      "message": "Variable 'separatorStyle' is used before its [declaration](1).",
+      "file": "packages/components/src/mobile/bottom-sheet/cell.native.js",
+      "region": {
+        "startLine": 157,
+        "startColumn": 4,
+        "endColumn": 18
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/use-before-declaration",
+      "rule_index": 132,
+      "level": "warning",
+      "message": "Variable 'onSizeChange' is used before its [declaration](1).",
+      "file": "packages/components/src/mobile/keyboard-aware-flat-list/index.ios.js",
+      "region": {
+        "startLine": 68,
+        "startColumn": 3,
+        "endColumn": 15
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/use-before-declaration",
+      "rule_index": 132,
+      "level": "warning",
+      "message": "Variable 'onHide' is used before its [declaration](1).",
+      "file": "packages/components/src/notice/index.native.js",
+      "region": {
+        "startLine": 50,
+        "startColumn": 23,
+        "endColumn": 29
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-assignment-to-local",
+      "rule_index": 135,
+      "level": "warning",
+      "message": "The value assigned to message here is unused.",
+      "file": "packages/a11y/src/index.native.ts",
+      "region": {
+        "startLine": 16,
+        "startColumn": 2,
+        "endColumn": 36
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-assignment-to-local",
+      "rule_index": 135,
+      "level": "warning",
+      "message": "The value assigned to parallel here is unused.",
+      "file": "packages/asset-loader/src/index.ts",
+      "region": {
+        "startLine": 242,
+        "startColumn": 2,
+        "endColumn": 15
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-assignment-to-local",
+      "rule_index": 135,
+      "level": "warning",
+      "message": "The initial value of numColsToBreakAt is unused, since it is always overwritten.",
+      "file": "packages/block-editor/src/hooks/layout-child.js",
+      "region": {
+        "startLine": 128,
+        "startColumn": 8,
+        "endColumn": 28
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-assignment-to-local",
+      "rule_index": 135,
+      "level": "warning",
+      "message": "The initial value of updatedBlockAttributes is unused, since it is always overwritten.",
+      "file": "packages/blocks/src/api/parser/apply-built-in-validation-fixes.ts",
+      "region": {
+        "startLine": 38,
+        "startColumn": 6,
+        "endColumn": 41
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-assignment-to-local",
+      "rule_index": 135,
+      "level": "warning",
+      "message": "The initial value of result is unused, since it is always overwritten.",
+      "file": "packages/components/src/mobile/bottom-sheet/range-text-input.native.js",
+      "region": {
+        "startLine": 114,
+        "startColumn": 7,
+        "endColumn": 19
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-assignment-to-local",
+      "rule_index": 135,
+      "level": "warning",
+      "message": "The value assigned to onSizeChange here is unused.",
+      "file": "packages/components/src/mobile/keyboard-aware-flat-list/index.ios.js",
+      "region": {
+        "startLine": 95,
+        "startColumn": 8,
+        "endLine": 98,
+        "endColumn": 3
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-assignment-to-local",
+      "rule_index": 135,
+      "level": "warning",
+      "message": "The initial value of matchedPath is unused, since it is always overwritten.",
+      "file": "packages/components/src/navigator/navigator/component.tsx",
+      "region": {
+        "startLine": 152,
+        "startColumn": 6,
+        "endLine": 158,
+        "endColumn": 11
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-assignment-to-local",
+      "rule_index": 135,
+      "level": "warning",
+      "message": "The initial value of value is unused, since it is always overwritten.",
+      "file": "packages/e2e-tests/plugins/interactive-blocks/generator-scope/view.js",
+      "region": {
+        "startLine": 23,
+        "startColumn": 8,
+        "endColumn": 42
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-assignment-to-local",
+      "rule_index": 135,
+      "level": "warning",
+      "message": "The value assigned to here_op here is unused.",
+      "file": "packages/global-styles-ui/src/font-library/lib/inflate.js",
+      "region": {
+        "startLine": 2314,
+        "startColumn": 12,
+        "endColumn": 44
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-assignment-to-local",
+      "rule_index": 135,
+      "level": "warning",
+      "message": "The value assigned to prev_byte1 here is unused.",
+      "file": "packages/global-styles-ui/src/font-library/lib/unbrotli.js",
+      "region": {
+        "startLine": 1794,
+        "startColumn": 9,
+        "endLine": 1795,
+        "endColumn": 53
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-assignment-to-local",
+      "rule_index": 135,
+      "level": "warning",
+      "message": "The value assigned to prev_byte2 here is unused.",
+      "file": "packages/global-styles-ui/src/font-library/lib/unbrotli.js",
+      "region": {
+        "startLine": 1796,
+        "startColumn": 9,
+        "endLine": 1797,
+        "endColumn": 53
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unused-local-variable",
+      "rule_index": 138,
+      "level": "warning",
+      "message": "Unused variable iOSOnly.",
+      "file": "packages/block-library/src/index.native.js",
+      "region": {
+        "startLine": 152,
+        "startColumn": 7,
+        "endColumn": 14
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unused-local-variable",
+      "rule_index": 138,
+      "level": "warning",
+      "message": "Unused variable AsyncValidationWithTest.",
+      "file": "packages/components/src/validated-form-controls/components/stories/overview.story.tsx",
+      "region": {
+        "startLine": 207,
+        "startColumn": 7,
+        "endColumn": 30
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unused-local-variable",
+      "rule_index": 138,
+      "level": "warning",
+      "message": "Unused variable define.",
+      "file": "packages/global-styles-ui/src/font-library/lib/inflate.js",
+      "region": {
+        "startLine": 33,
+        "startColumn": 6,
+        "endColumn": 12
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unused-local-variable",
+      "rule_index": 138,
+      "level": "warning",
+      "message": "Unused variable module.",
+      "file": "packages/global-styles-ui/src/font-library/lib/inflate.js",
+      "region": {
+        "startLine": 33,
+        "startColumn": 14,
+        "endColumn": 20
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unused-local-variable",
+      "rule_index": 138,
+      "level": "warning",
+      "message": "Unused variable exports.",
+      "file": "packages/global-styles-ui/src/font-library/lib/inflate.js",
+      "region": {
+        "startLine": 33,
+        "startColumn": 22,
+        "endColumn": 29
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unused-local-variable",
+      "rule_index": 138,
+      "level": "warning",
+      "message": "Unused variable fetchFunction.",
+      "file": "packages/global-styles-ui/src/font-library/lib/lib-font.browser.js",
+      "region": {
+        "startLine": 35,
+        "startColumn": 5,
+        "endColumn": 18
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unused-local-variable",
+      "rule_index": 138,
+      "level": "warning",
+      "message": "Unused variable define.",
+      "file": "packages/global-styles-ui/src/font-library/lib/unbrotli.js",
+      "region": {
+        "startLine": 32,
+        "startColumn": 6,
+        "endColumn": 12
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unused-local-variable",
+      "rule_index": 138,
+      "level": "warning",
+      "message": "Unused variable module.",
+      "file": "packages/global-styles-ui/src/font-library/lib/unbrotli.js",
+      "region": {
+        "startLine": 32,
+        "startColumn": 14,
+        "endColumn": 20
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unused-local-variable",
+      "rule_index": 138,
+      "level": "warning",
+      "message": "Unused variable exports.",
+      "file": "packages/global-styles-ui/src/font-library/lib/unbrotli.js",
+      "region": {
+        "startLine": 32,
+        "startColumn": 22,
+        "endColumn": 29
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unused-local-variable",
+      "rule_index": 138,
+      "level": "warning",
+      "message": "Unused variable CONTEXT_LSB6.",
+      "file": "packages/global-styles-ui/src/font-library/lib/unbrotli.js",
+      "region": {
+        "startLine": 323,
+        "startColumn": 10,
+        "endColumn": 22
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unused-local-variable",
+      "rule_index": 138,
+      "level": "warning",
+      "message": "Unused variable CONTEXT_MSB6.",
+      "file": "packages/global-styles-ui/src/font-library/lib/unbrotli.js",
+      "region": {
+        "startLine": 324,
+        "startColumn": 10,
+        "endColumn": 22
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unused-local-variable",
+      "rule_index": 138,
+      "level": "warning",
+      "message": "Unused variable CONTEXT_UTF8.",
+      "file": "packages/global-styles-ui/src/font-library/lib/unbrotli.js",
+      "region": {
+        "startLine": 325,
+        "startColumn": 10,
+        "endColumn": 22
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unused-local-variable",
+      "rule_index": 138,
+      "level": "warning",
+      "message": "Unused variable CONTEXT_SIGNED.",
+      "file": "packages/global-styles-ui/src/font-library/lib/unbrotli.js",
+      "region": {
+        "startLine": 326,
+        "startColumn": 10,
+        "endColumn": 24
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unused-local-variable",
+      "rule_index": 138,
+      "level": "warning",
+      "message": "Unused variable start_index.",
+      "file": "packages/global-styles-ui/src/font-library/lib/unbrotli.js",
+      "region": {
+        "startLine": 625,
+        "startColumn": 11,
+        "endColumn": 22
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unused-local-variable",
+      "rule_index": 138,
+      "level": "warning",
+      "message": "Unused variable kOmitFirst8.",
+      "file": "packages/global-styles-ui/src/font-library/lib/unbrotli.js",
+      "region": {
+        "startLine": 2454,
+        "startColumn": 10,
+        "endColumn": 21
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unused-local-variable",
+      "rule_index": 138,
+      "level": "warning",
+      "message": "Unused imports LocaleData, SubscribeCallback, TransformedText, UnsubscribeCallback.",
+      "file": "packages/i18n/src/default-i18n.ts",
+      "region": {
+        "startLine": 10,
+        "endLine": 15,
+        "endColumn": 18
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unused-local-variable",
+      "rule_index": 138,
+      "level": "warning",
+      "message": "Unused variable Admin.",
+      "file": "test/e2e/specs/widgets/customizing-widgets.spec.js",
+      "region": {
+        "startLine": 7,
+        "startColumn": 2,
+        "endColumn": 7
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/regex/duplicate-in-character-class",
+      "rule_index": 143,
+      "level": "warning",
+      "message": "Character '|' is [repeated in the same character class](1).\nCharacter '|' is [repeated in the same character class](2).",
+      "file": "packages/components/src/mobile/utils/get-px-from-css-unit.native.js",
+      "region": {
+        "startLine": 11,
+        "startColumn": 37,
+        "endColumn": 38
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/regex/duplicate-in-character-class",
+      "rule_index": 143,
+      "level": "warning",
+      "message": "Character 'm' is [repeated in the same character class](1).",
+      "file": "packages/components/src/mobile/utils/get-px-from-css-unit.native.js",
+      "region": {
+        "startLine": 11,
+        "startColumn": 40,
+        "endColumn": 41
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/regex/duplicate-in-character-class",
+      "rule_index": 143,
+      "level": "warning",
+      "message": "Character '|' is [repeated in the same character class](1).",
+      "file": "packages/components/src/mobile/utils/get-px-from-css-unit.native.js",
+      "region": {
+        "startLine": 11,
+        "startColumn": 53,
+        "endColumn": 54
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/regex/duplicate-in-character-class",
+      "rule_index": 143,
+      "level": "warning",
+      "message": "Character '\"' is [repeated in the same character class](1).",
+      "file": "packages/escape-html/src/index.ts",
+      "region": {
+        "startLine": 16,
+        "startColumn": 18,
+        "endColumn": 19
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/regex/duplicate-in-character-class",
+      "rule_index": 143,
+      "level": "warning",
+      "message": "Character '?' is [repeated in the same character class](1).\nCharacter '?' is [repeated in the same character class](2).\nCharacter '?' is [repeated in the same character class](3).",
+      "file": "packages/global-styles-ui/src/shadow-utils.ts",
+      "region": {
+        "startLine": 127,
+        "startColumn": 71,
+        "endColumn": 72
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/regex/duplicate-in-character-class",
+      "rule_index": 143,
+      "level": "warning",
+      "message": "Character '-' is [repeated in the same character class](1).",
+      "file": "packages/icons/lib/generate-library.cjs",
+      "region": {
+        "startLine": 185,
+        "startColumn": 25,
+        "endColumn": 26
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/regex/duplicate-in-character-class",
+      "rule_index": 143,
+      "level": "warning",
+      "message": "Character '-' is [repeated in the same character class](1).",
+      "file": "packages/icons/lib/validate-collection.cjs",
+      "region": {
+        "startLine": 79,
+        "startColumn": 45,
+        "endColumn": 46
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/superfluous-trailing-arguments",
+      "rule_index": 161,
+      "level": "warning",
+      "message": "Superfluous argument passed to [function parseFloat](1).",
+      "file": "packages/block-editor/src/components/border-radius-control/utils.js",
+      "region": {
+        "startLine": 189,
+        "startColumn": 28,
+        "endColumn": 30
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/superfluous-trailing-arguments",
+      "rule_index": 161,
+      "level": "warning",
+      "message": "Superfluous argument passed to [function parseFloat](1).",
+      "file": "packages/block-editor/src/components/border-radius-control/utils.js",
+      "region": {
+        "startLine": 213,
+        "startColumn": 34,
+        "endColumn": 36
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/superfluous-trailing-arguments",
+      "rule_index": 161,
+      "level": "warning",
+      "message": "Superfluous argument passed to [function useSearchHandler](1).",
+      "file": "packages/block-editor/src/components/link-control/search-input.js",
+      "region": {
+        "startLine": 56,
+        "startColumn": 4,
+        "endColumn": 21
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/superfluous-trailing-arguments",
+      "rule_index": 161,
+      "level": "warning",
+      "message": "Superfluous argument passed to [function handleNoop](1).\nSuperfluous argument passed to [function handleDirectEntry](2).",
+      "file": "packages/block-editor/src/components/link-control/use-search-handler.js",
+      "region": {
+        "startLine": 112,
+        "startColumn": 32,
+        "endColumn": 56
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/superfluous-trailing-arguments",
+      "rule_index": 161,
+      "level": "warning",
+      "message": "Superfluous argument passed to [function parseFloat](1).",
+      "file": "packages/block-editor/src/components/preset-input-control/utils.js",
+      "region": {
+        "startLine": 47,
+        "startColumn": 28,
+        "endColumn": 30
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/superfluous-trailing-arguments",
+      "rule_index": 161,
+      "level": "warning",
+      "message": "Superfluous argument passed to [function parseFloat](1).",
+      "file": "packages/block-editor/src/components/preset-input-control/utils.js",
+      "region": {
+        "startLine": 73,
+        "startColumn": 22,
+        "endColumn": 24
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/superfluous-trailing-arguments",
+      "rule_index": 161,
+      "level": "warning",
+      "message": "Superfluous argument passed to [function parseFloat](1).",
+      "file": "packages/block-editor/src/components/spacing-sizes-control/utils.js",
+      "region": {
+        "startLine": 176,
+        "startColumn": 28,
+        "endColumn": 30
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/superfluous-trailing-arguments",
+      "rule_index": 161,
+      "level": "warning",
+      "message": "Superfluous argument passed to [function getInsertBlockTypeDependants](1).",
+      "file": "packages/block-editor/src/store/private-selectors.js",
+      "region": {
+        "startLine": 339,
+        "startColumn": 37,
+        "endColumn": 43
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/superfluous-trailing-arguments",
+      "rule_index": 161,
+      "level": "warning",
+      "message": "Superfluous argument passed to [function getInsertBlockTypeDependants](1).",
+      "file": "packages/block-editor/src/store/selectors.js",
+      "region": {
+        "startLine": 1900,
+        "startColumn": 34,
+        "endColumn": 40
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/superfluous-trailing-arguments",
+      "rule_index": 161,
+      "level": "warning",
+      "message": "Superfluous argument passed to [function getInsertBlockTypeDependants](1).",
+      "file": "packages/block-editor/src/store/selectors.js",
+      "region": {
+        "startLine": 2470,
+        "startColumn": 37,
+        "endColumn": 43
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/superfluous-trailing-arguments",
+      "rule_index": 161,
+      "level": "warning",
+      "message": "Superfluous argument passed to [function getInsertBlockTypeDependants](1).",
+      "file": "packages/block-editor/src/store/selectors.js",
+      "region": {
+        "startLine": 2543,
+        "startColumn": 37,
+        "endColumn": 43
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/superfluous-trailing-arguments",
+      "rule_index": 161,
+      "level": "warning",
+      "message": "Superfluous argument passed to [function getInsertBlockTypeDependants](1).",
+      "file": "packages/block-editor/src/store/selectors.js",
+      "region": {
+        "startLine": 2605,
+        "startColumn": 37,
+        "endColumn": 43
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/superfluous-trailing-arguments",
+      "rule_index": 161,
+      "level": "warning",
+      "message": "Superfluous argument passed to [function getInsertBlockTypeDependants](1).",
+      "file": "packages/block-editor/src/store/selectors.js",
+      "region": {
+        "startLine": 2680,
+        "startColumn": 35,
+        "endColumn": 41
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/superfluous-trailing-arguments",
+      "rule_index": 161,
+      "level": "warning",
+      "message": "Superfluous argument passed to [function useEnter](1).",
+      "file": "packages/block-library/src/list-item/edit.native.js",
+      "region": {
+        "startLine": 118,
+        "startColumn": 55,
+        "endColumn": 69
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/superfluous-trailing-arguments",
+      "rule_index": 161,
+      "level": "warning",
+      "message": "Superfluous argument passed to [function deepCopyLocksTreePath](1).",
+      "file": "packages/core-data/src/locks/test/utils.js",
+      "region": {
+        "startLine": 225,
+        "startColumn": 4,
+        "endLine": 227,
+        "endColumn": 5
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/superfluous-trailing-arguments",
+      "rule_index": 161,
+      "level": "warning",
+      "message": "Superfluous argument passed to [function __experimentalBatch](1).",
+      "file": "packages/core-data/src/test/actions.js",
+      "region": {
+        "startLine": 1136,
+        "startColumn": 4,
+        "endColumn": 68
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/superfluous-trailing-arguments",
+      "rule_index": 161,
+      "level": "warning",
+      "message": "Superfluous argument passed to [function getSidebarControl](1).",
+      "file": "packages/customize-widgets/src/index.js",
+      "region": {
+        "startLine": 79,
+        "startColumn": 44,
+        "endColumn": 63
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/superfluous-trailing-arguments",
+      "rule_index": 161,
+      "level": "warning",
+      "message": "Superfluous argument passed to [function getPostType](1).",
+      "file": "packages/edit-site/src/components/editor/use-resolve-edited-entity.js",
+      "region": {
+        "startLine": 60,
+        "startColumn": 38,
+        "endColumn": 44
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/superfluous-trailing-arguments",
+      "rule_index": 161,
+      "level": "warning",
+      "message": "Superfluous argument passed to [function getTranslationFilePath](1).",
+      "file": "packages/react-native-editor/bin/i18n-translations-download.js",
+      "region": {
+        "startLine": 152,
+        "startColumn": 7,
+        "endColumn": 13
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unknown-directive",
+      "rule_index": 181,
+      "level": "warning",
+      "message": "Unknown directive: 'worklet'.",
+      "file": "packages/block-editor/src/components/block-draggable/index.native.js",
+      "region": {
+        "startLine": 100,
+        "startColumn": 3,
+        "endColumn": 13
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unknown-directive",
+      "rule_index": 181,
+      "level": "warning",
+      "message": "Unknown directive: 'worklet'.",
+      "file": "packages/block-editor/src/components/block-draggable/index.native.js",
+      "region": {
+        "startLine": 168,
+        "startColumn": 3,
+        "endColumn": 13
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unknown-directive",
+      "rule_index": 181,
+      "level": "warning",
+      "message": "Unknown directive: 'worklet'.",
+      "file": "packages/block-editor/src/components/block-draggable/index.native.js",
+      "region": {
+        "startLine": 180,
+        "startColumn": 3,
+        "endColumn": 13
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unknown-directive",
+      "rule_index": 181,
+      "level": "warning",
+      "message": "Unknown directive: 'worklet'.",
+      "file": "packages/block-editor/src/components/block-draggable/index.native.js",
+      "region": {
+        "startLine": 193,
+        "startColumn": 3,
+        "endColumn": 13
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unknown-directive",
+      "rule_index": 181,
+      "level": "warning",
+      "message": "Unknown directive: 'worklet'.",
+      "file": "packages/block-editor/src/components/block-draggable/index.native.js",
+      "region": {
+        "startLine": 226,
+        "startColumn": 3,
+        "endColumn": 13
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unknown-directive",
+      "rule_index": 181,
+      "level": "warning",
+      "message": "Unknown directive: 'worklet'.",
+      "file": "packages/block-editor/src/components/block-draggable/use-scroll-when-dragging.native.js",
+      "region": {
+        "startLine": 53,
+        "startColumn": 3,
+        "endColumn": 13
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unknown-directive",
+      "rule_index": 181,
+      "level": "warning",
+      "message": "Unknown directive: 'worklet'.",
+      "file": "packages/block-editor/src/components/block-draggable/use-scroll-when-dragging.native.js",
+      "region": {
+        "startLine": 60,
+        "startColumn": 3,
+        "endColumn": 13
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unknown-directive",
+      "rule_index": 181,
+      "level": "warning",
+      "message": "Unknown directive: 'worklet'.",
+      "file": "packages/block-editor/src/components/block-draggable/use-scroll-when-dragging.native.js",
+      "region": {
+        "startLine": 69,
+        "startColumn": 3,
+        "endColumn": 13
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unknown-directive",
+      "rule_index": 181,
+      "level": "warning",
+      "message": "Unknown directive: 'worklet'.",
+      "file": "packages/block-editor/src/components/block-draggable/use-scroll-when-dragging.native.js",
+      "region": {
+        "startLine": 87,
+        "startColumn": 3,
+        "endColumn": 13
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unknown-directive",
+      "rule_index": 181,
+      "level": "warning",
+      "message": "Unknown directive: 'worklet'.",
+      "file": "packages/block-editor/src/components/use-block-drop-zone/index.native.js",
+      "region": {
+        "startLine": 189,
+        "startColumn": 4,
+        "endColumn": 14
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unknown-directive",
+      "rule_index": 181,
+      "level": "warning",
+      "message": "Unknown directive: 'worklet'.",
+      "file": "packages/components/src/draggable/index.native.js",
+      "region": {
+        "startLine": 89,
+        "startColumn": 3,
+        "endColumn": 13
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/components/src/context/test/context-connect.tsx",
+      "region": {
+        "startLine": 31,
+        "startColumn": 3,
+        "endColumn": 10
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/global-styles-ui/src/font-library/lib/lib-font.browser.js",
+      "region": {
+        "startLine": 345,
+        "startColumn": 3,
+        "endColumn": 11
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/global-styles-ui/src/font-library/lib/lib-font.browser.js",
+      "region": {
+        "startLine": 417,
+        "startColumn": 3,
+        "endColumn": 11
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/global-styles-ui/src/font-library/lib/lib-font.browser.js",
+      "region": {
+        "startLine": 1150,
+        "startColumn": 3,
+        "endColumn": 11
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/global-styles-ui/src/font-library/lib/lib-font.browser.js",
+      "region": {
+        "startLine": 1198,
+        "startColumn": 3,
+        "endColumn": 11
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/global-styles-ui/src/font-library/lib/lib-font.browser.js",
+      "region": {
+        "startLine": 1239,
+        "startColumn": 3,
+        "endColumn": 11
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/global-styles-ui/src/font-library/lib/lib-font.browser.js",
+      "region": {
+        "startLine": 1292,
+        "startColumn": 3,
+        "endColumn": 11
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/global-styles-ui/src/font-library/lib/lib-font.browser.js",
+      "region": {
+        "startLine": 1497,
+        "startColumn": 3,
+        "endColumn": 10
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/global-styles-ui/src/font-library/lib/lib-font.browser.js",
+      "region": {
+        "startLine": 1498,
+        "startColumn": 3,
+        "endColumn": 10
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/global-styles-ui/src/font-library/lib/lib-font.browser.js",
+      "region": {
+        "startLine": 1499,
+        "startColumn": 3,
+        "endColumn": 10
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/global-styles-ui/src/font-library/lib/lib-font.browser.js",
+      "region": {
+        "startLine": 1500,
+        "startColumn": 3,
+        "endColumn": 10
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/global-styles-ui/src/font-library/lib/lib-font.browser.js",
+      "region": {
+        "startLine": 3182,
+        "startColumn": 3,
+        "endColumn": 11
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/global-styles-ui/src/font-library/lib/lib-font.browser.js",
+      "region": {
+        "startLine": 3227,
+        "startColumn": 3,
+        "endColumn": 11
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/global-styles-ui/src/font-library/lib/lib-font.browser.js",
+      "region": {
+        "startLine": 3607,
+        "startColumn": 3,
+        "endColumn": 11
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/global-styles-ui/src/font-library/lib/lib-font.browser.js",
+      "region": {
+        "startLine": 3608,
+        "startColumn": 3,
+        "endColumn": 11
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/global-styles-ui/src/font-library/lib/lib-font.browser.js",
+      "region": {
+        "startLine": 3728,
+        "startColumn": 3,
+        "endColumn": 11
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/interactivity/src/test/types.ts",
+      "region": {
+        "startLine": 20,
+        "startColumn": 4,
+        "endColumn": 17
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/interactivity/src/test/types.ts",
+      "region": {
+        "startLine": 55,
+        "startColumn": 4,
+        "endColumn": 17
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/interactivity/src/test/types.ts",
+      "region": {
+        "startLine": 103,
+        "startColumn": 4,
+        "endColumn": 17
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/interactivity/src/test/types.ts",
+      "region": {
+        "startLine": 154,
+        "startColumn": 4,
+        "endColumn": 17
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/interactivity/src/test/types.ts",
+      "region": {
+        "startLine": 201,
+        "startColumn": 4,
+        "endColumn": 17
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/interactivity/src/test/types.ts",
+      "region": {
+        "startLine": 252,
+        "startColumn": 4,
+        "endColumn": 17
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/interactivity/src/test/types.ts",
+      "region": {
+        "startLine": 342,
+        "startColumn": 4,
+        "endColumn": 17
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/interactivity/src/test/types.ts",
+      "region": {
+        "startLine": 380,
+        "startColumn": 4,
+        "endColumn": 11
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/interactivity/src/test/types.ts",
+      "region": {
+        "startLine": 388,
+        "startColumn": 4,
+        "endColumn": 11
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/interactivity/src/test/types.ts",
+      "region": {
+        "startLine": 407,
+        "startColumn": 4,
+        "endColumn": 11
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/interactivity/src/test/types.ts",
+      "region": {
+        "startLine": 415,
+        "startColumn": 4,
+        "endColumn": 11
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/react-native-bridge/common/gutenberg-web-single-block/inject-css.js",
+      "region": {
+        "startLine": 17,
+        "startColumn": 3,
+        "endColumn": 5
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/useless-expression",
+      "rule_index": 182,
+      "level": "warning",
+      "message": "This expression has no effect.",
+      "file": "packages/react-native-bridge/common/gutenberg-web-single-block/prevent-autosaves.js",
+      "region": {
+        "startLine": 9,
+        "startColumn": 3,
+        "endColumn": 5
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/comparison-between-incompatible-types",
+      "rule_index": 185,
+      "level": "warning",
+      "message": "Variable 'currentValueForToggle' cannot be of type undefined, but it is compared to ['undefined'](1) of type undefined.",
+      "file": "packages/block-editor/src/components/background-image-control/index.js",
+      "region": {
+        "startLine": 627,
+        "startColumn": 7,
+        "endColumn": 28
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/comparison-between-incompatible-types",
+      "rule_index": 185,
+      "level": "warning",
+      "message": "Variable 'message' is of type date, object or regular expression, but it is compared to [an expression](1) of type null.",
+      "file": "packages/block-editor/src/components/block-removal-warning-modal/index.js",
+      "region": {
+        "startLine": 51,
+        "startColumn": 54,
+        "endColumn": 61
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/comparison-between-incompatible-types",
+      "rule_index": 185,
+      "level": "warning",
+      "message": "Variable 'x' is of type date, object or regular expression, but it is compared to ['undefined'](1) of type undefined.",
+      "file": "packages/block-library/src/navigation/edit/are-blocks-dirty.js",
+      "region": {
+        "startLine": 28,
+        "startColumn": 3,
+        "endColumn": 4
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/comparison-between-incompatible-types",
+      "rule_index": 185,
+      "level": "warning",
+      "message": "Variable 'y' is of type date, object or regular expression, but it is compared to ['undefined'](1) of type undefined.",
+      "file": "packages/block-library/src/navigation/edit/are-blocks-dirty.js",
+      "region": {
+        "startLine": 31,
+        "startColumn": 3,
+        "endColumn": 4
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/comparison-between-incompatible-types",
+      "rule_index": 185,
+      "level": "warning",
+      "message": "Variable 'dimRatio' cannot be of type undefined, but it is compared to ['undefined'](1) of type undefined.",
+      "file": "packages/block-library/src/post-featured-image/overlay.js",
+      "region": {
+        "startLine": 46,
+        "startColumn": 28,
+        "endColumn": 36
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/comparison-between-incompatible-types",
+      "rule_index": 185,
+      "level": "warning",
+      "message": "Variable 'shortcut' cannot be of type null, but it is compared to [an expression](1) of type null.",
+      "file": "packages/components/src/shortcut/index.tsx",
+      "region": {
+        "startLine": 33,
+        "startColumn": 7,
+        "endColumn": 15
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/comparison-between-incompatible-types",
+      "rule_index": 185,
+      "level": "warning",
+      "message": "This expression is of type boolean, but it is compared to [an expression](1) of type string.",
+      "file": "packages/core-commands/src/site-editor-navigation-commands.js",
+      "region": {
+        "startLine": 247,
+        "startColumn": 30,
+        "endColumn": 44
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unneeded-defensive-code",
+      "rule_index": 186,
+      "level": "warning",
+      "message": "This guard always evaluates to true.",
+      "file": "packages/block-editor/src/components/use-block-drop-zone/index.native.js",
+      "region": {
+        "startLine": 151,
+        "startColumn": 9,
+        "endColumn": 29
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unneeded-defensive-code",
+      "rule_index": 186,
+      "level": "warning",
+      "message": "This guard always evaluates to false.",
+      "file": "packages/components/src/unit-control/utils.ts",
+      "region": {
+        "startLine": 308,
+        "startColumn": 42,
+        "endColumn": 59
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unneeded-defensive-code",
+      "rule_index": 186,
+      "level": "warning",
+      "message": "This guard always evaluates to true.",
+      "file": "packages/global-styles-ui/src/font-library/font-collection.tsx",
+      "region": {
+        "startLine": 319,
+        "startColumn": 12,
+        "endColumn": 22
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/unneeded-defensive-code",
+      "rule_index": 186,
+      "level": "warning",
+      "message": "This guard always evaluates to true.",
+      "file": "packages/global-styles-ui/src/gradients-palette-panel.tsx",
+      "region": {
+        "startLine": 110,
+        "startColumn": 6,
+        "endColumn": 23
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/missing-space-in-concatenation",
+      "rule_index": 189,
+      "level": "warning",
+      "message": "This string appears to be missing a space after 'plugin.'.",
+      "file": "packages/create-block/lib/index.js",
+      "region": {
+        "startLine": 29,
+        "startColumn": 4,
+        "endColumn": 74
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/missing-space-in-concatenation",
+      "rule_index": 189,
+      "level": "warning",
+      "message": "This string appears to be missing a space after 'Hello!'.",
+      "file": "packages/element/src/test/serialize.js",
+      "region": {
+        "startLine": 79,
+        "startColumn": 4,
+        "endColumn": 31
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/missing-await",
+      "rule_index": 191,
+      "level": "warning",
+      "message": "Missing await. The value 'request' is always a promise.",
+      "file": "packages/components/src/mobile/link-picker/link-picker-results.native.js",
+      "region": {
+        "startLine": 63,
+        "startColumn": 24,
+        "endColumn": 31
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/implicit-operand-conversion",
+      "rule_index": 192,
+      "level": "warning",
+      "message": "This expression will be implicitly converted from boolean to number or string.",
+      "file": "packages/block-editor/src/components/block-caption/index.native.js",
+      "region": {
+        "startLine": 74,
+        "startColumn": 6,
+        "endColumn": 35
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/implicit-operand-conversion",
+      "rule_index": 192,
+      "level": "warning",
+      "message": "This expression will be implicitly converted from boolean to number or string.",
+      "file": "packages/block-editor/src/components/block-settings-menu-controls/index.js",
+      "region": {
+        "startLine": 89,
+        "startColumn": 6,
+        "endColumn": 21
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/implicit-operand-conversion",
+      "rule_index": 192,
+      "level": "warning",
+      "message": "This expression will be implicitly converted from boolean to number or string.",
+      "file": "packages/block-editor/src/components/block-toolbar/index.native.js",
+      "region": {
+        "startLine": 99,
+        "startColumn": 13,
+        "endColumn": 28
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/implicit-operand-conversion",
+      "rule_index": 192,
+      "level": "warning",
+      "message": "This expression will be implicitly converted from boolean to number or string.",
+      "file": "packages/block-library/src/gallery/transforms.js",
+      "region": {
+        "startLine": 90,
+        "startColumn": 4,
+        "endColumn": 48
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/implicit-operand-conversion",
+      "rule_index": 192,
+      "level": "warning",
+      "message": "This expression will be implicitly converted from boolean to number or string.",
+      "file": "packages/components/src/autocomplete/autocompleter-ui.native.js",
+      "region": {
+        "startLine": 133,
+        "startColumn": 7,
+        "endColumn": 29
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/call-to-non-callable",
+      "rule_index": 193,
+      "level": "warning",
+      "message": "Callee is not a function: it has type undefined.",
+      "file": "packages/block-editor/src/components/block-mover/index.native.js",
+      "region": {
+        "startLine": 68,
+        "startColumn": 6,
+        "endColumn": 61
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/call-to-non-callable",
+      "rule_index": 193,
+      "level": "warning",
+      "message": "Callee is not a function: it has type undefined.",
+      "file": "packages/block-editor/src/components/block-toolbar/block-toolbar-menu.native.js",
+      "region": {
+        "startLine": 99,
+        "startColumn": 6,
+        "endColumn": 60
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/call-to-non-callable",
+      "rule_index": 193,
+      "level": "warning",
+      "message": "Callee is not a function: it has type undefined.",
+      "file": "packages/block-editor/src/components/block-toolbar/block-toolbar-menu.native.js",
+      "region": {
+        "startLine": 109,
+        "startColumn": 32,
+        "endLine": 111,
+        "endColumn": 5
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/call-to-non-callable",
+      "rule_index": 193,
+      "level": "warning",
+      "message": "Callee is not a function: it has type undefined.",
+      "file": "packages/block-editor/src/components/inner-blocks/warning-max-depth-exceeded.native.js",
+      "region": {
+        "startLine": 42,
+        "startColumn": 32,
+        "endLine": 44,
+        "endColumn": 5
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/call-to-non-callable",
+      "rule_index": 193,
+      "level": "warning",
+      "message": "Callee is not a function: it has type undefined.",
+      "file": "packages/editor/src/store/test/actions.native.js",
+      "region": {
+        "startLine": 9,
+        "startColumn": 19,
+        "endColumn": 51
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/call-to-non-callable",
+      "rule_index": 193,
+      "level": "warning",
+      "message": "Callee is not a function: it has type undefined.",
+      "file": "packages/editor/src/store/test/reducer.native.js",
+      "region": {
+        "startLine": 10,
+        "startColumn": 13,
+        "endColumn": 39
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/call-to-non-callable",
+      "rule_index": 193,
+      "level": "warning",
+      "message": "Callee is not a function: it has type undefined.",
+      "file": "packages/editor/src/store/test/reducer.native.js",
+      "region": {
+        "startLine": 20,
+        "startColumn": 6,
+        "endColumn": 47
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/call-to-non-callable",
+      "rule_index": 193,
+      "level": "warning",
+      "message": "Callee is not a function: it has type undefined.",
+      "file": "packages/editor/src/store/test/reducer.native.js",
+      "region": {
+        "startLine": 31,
+        "startColumn": 6,
+        "endColumn": 48
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/call-to-non-callable",
+      "rule_index": 193,
+      "level": "warning",
+      "message": "Callee is not a function: it has type undefined.",
+      "file": "packages/editor/src/store/test/selectors.native.js",
+      "region": {
+        "startLine": 15,
+        "startColumn": 12,
+        "endColumn": 40
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/call-to-non-callable",
+      "rule_index": 193,
+      "level": "warning",
+      "message": "Callee is not a function: it has type undefined.",
+      "file": "packages/editor/src/store/test/selectors.native.js",
+      "region": {
+        "startLine": 25,
+        "startColumn": 12,
+        "endColumn": 40
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/property-access-on-non-object",
+      "rule_index": 194,
+      "level": "warning",
+      "message": "The base expression of this property access is always undefined.",
+      "file": "packages/block-library/src/spacer/edit.native.js",
+      "region": {
+        "startLine": 74,
+        "startColumn": 48,
+        "endColumn": 65
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    },
+    {
+      "rule_id": "js/property-access-on-non-object",
+      "rule_index": 194,
+      "level": "warning",
+      "message": "The base expression of this property access is always undefined.",
+      "file": "packages/block-library/src/spacer/edit.native.js",
+      "region": {
+        "startLine": 84,
+        "startColumn": 46,
+        "endColumn": 63
+      },
+      "kind": "notApplicable",
+      "properties": {}
+    }
+  ],
+  "sarif_metadata": {
+    "version": "2.1.0",
+    "schema_uri": "https://json.schemastore.org/sarif-2.1.0.json",
+    "tool": {
+      "name": "CodeQL",
+      "version": "unknown",
+      "information_uri": ""
+    },
+    "tool_name": "CodeQL",
+    "tool_version": "unknown"
+  }
+}

@@ -1,0 +1,291 @@
+{
+  "total_vulnerabilities": 25,
+  "vulnerabilities_by_severity": {
+    "critical": 2,
+    "high": 7,
+    "medium": 15,
+    "low": 1
+  },
+  "vulnerabilities": [
+    {
+      "package_name": "@babel/runtime",
+      "current_version": "7.25.7",
+      "vuln_id": "GHSA-968p-4wvh-cqc8",
+      "vuln_severity": "medium",
+      "fix_version": "7.26.10",
+      "message": "Babel has inefficient RegExp complexity in generated code with .replace when transpiling named capturing groups",
+      "cwe": "N/A",
+      "cvss_score": 6.2,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "composer",
+      "current_version": "2.9.5",
+      "vuln_id": "CVE-2026-40261",
+      "vuln_severity": "high",
+      "fix_version": "2.2.27",
+      "message": "Composer is a dependency manager for PHP. Versions 1.0 through 2.2.26 and 2.3 through 2.9.5 contain a command injection vulnerability in the Perforce::syncCodeBase() method, which appends the $sourceReference parameter to a shell command without proper escaping, and additionally in the Perforce::generateP4Command() method as in GHSA-wg36-wvj6-r67p / CVE-2026-40176, which interpolates user-supplied Perforce connection parameters (port, user, client) from the source url field without proper escaping. An attacker can inject arbitrary commands through crafted source reference or source url values containing shell metacharacters, even if Perforce is not installed. Unlike CVE-2026-40176, the source reference and url are provided as part of package metadata, meaning any compromised or malicious Composer repository can serve package metadata declaring perforce as a source type with malicious values. This vulnerability is exploitable when installing or updating dependencies from source, including the default behavior when installing dev-prefixed versions. This issue has been fixed in Composer 2.2.27 (2.2 LTS) and 2.9.6 (mainline). If developers are unable to immediately update, they can avoid installing dependencies from source by using --prefer-dist or the preferred-install: dist config setting, and only use trusted Composer repositories as a workaround.",
+      "cwe": "N/A",
+      "cvss_score": 8.8,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "fast-uri",
+      "current_version": "3.1.0",
+      "vuln_id": "GHSA-q3j6-qgpj-74h6",
+      "vuln_severity": "high",
+      "fix_version": "3.1.1",
+      "message": "fast-uri vulnerable to path traversal via percent-encoded dot segments",
+      "cwe": "N/A",
+      "cvss_score": 7.5,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "fast-uri",
+      "current_version": "3.1.0",
+      "vuln_id": "GHSA-v39h-62p7-jpjc",
+      "vuln_severity": "high",
+      "fix_version": "3.1.2",
+      "message": "fast-uri vulnerable to host confusion via percent-encoded authority delimiters",
+      "cwe": "N/A",
+      "cvss_score": 7.5,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "uuid",
+      "current_version": "8.3.2",
+      "vuln_id": "GHSA-w5hq-g745-h8pq",
+      "vuln_severity": "medium",
+      "fix_version": "11.1.1",
+      "message": "uuid: Missing buffer bounds check in v3/v5/v6 when buf is provided",
+      "cwe": "N/A",
+      "cvss_score": 7.5,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "uuid",
+      "current_version": "9.0.1",
+      "vuln_id": "GHSA-w5hq-g745-h8pq",
+      "vuln_severity": "medium",
+      "fix_version": "11.1.1",
+      "message": "uuid: Missing buffer bounds check in v3/v5/v6 when buf is provided",
+      "cwe": "N/A",
+      "cvss_score": 7.5,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "fast-xml-builder",
+      "current_version": "1.1.4",
+      "vuln_id": "GHSA-5wm8-gmm8-39j9",
+      "vuln_severity": "high",
+      "fix_version": "1.1.7",
+      "message": "fast-xml-builder allows attribute values with unwanted quotes to bypass malicious or unwanted attributes",
+      "cwe": "N/A",
+      "cvss_score": 6.1,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "hono",
+      "current_version": "4.12.12",
+      "vuln_id": "GHSA-9vqf-7f2p-gf9v",
+      "vuln_severity": "medium",
+      "fix_version": "4.12.16",
+      "message": "Hono: bodyLimit() can be bypassed for chunked / unknown-length requests",
+      "cwe": "N/A",
+      "cvss_score": 6.5,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "hono",
+      "current_version": "4.12.12",
+      "vuln_id": "GHSA-hm8q-7f3q-5f36",
+      "vuln_severity": "low",
+      "fix_version": "4.12.18",
+      "message": "Hono has improper validation of NumericDate claims (exp, nbf, iat) in JWT verify()",
+      "cwe": "N/A",
+      "cvss_score": 3.8,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "hono",
+      "current_version": "4.12.12",
+      "vuln_id": "GHSA-qp7p-654g-cw7p",
+      "vuln_severity": "medium",
+      "fix_version": "4.12.18",
+      "message": "Hono has CSS Declaration Injection via Style Object Values in JSX SSR",
+      "cwe": "N/A",
+      "cvss_score": 4.3,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "hono",
+      "current_version": "4.12.12",
+      "vuln_id": "GHSA-p77w-8qqv-26rm",
+      "vuln_severity": "medium",
+      "fix_version": "4.12.18",
+      "message": "Hono's Cache Middleware ignores Vary: Authorization / Vary: Cookie leading to cross-user cache leakage",
+      "cwe": "N/A",
+      "cvss_score": 5.3,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "fast-xml-parser",
+      "current_version": "5.5.12",
+      "vuln_id": "GHSA-gh4j-gqv2-49f6",
+      "vuln_severity": "medium",
+      "fix_version": "5.7.0",
+      "message": "fast-xml-parser XMLBuilder: XML Comment and CDATA Injection via Unescaped Delimiters",
+      "cwe": "N/A",
+      "cvss_score": 6.1,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "ip-address",
+      "current_version": "10.1.0",
+      "vuln_id": "GHSA-v2v4-37r5-5v8g",
+      "vuln_severity": "medium",
+      "fix_version": "10.1.1",
+      "message": "ip-address has XSS in Address6 HTML-emitting methods",
+      "cwe": "N/A",
+      "cvss_score": 5.3,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "postcss",
+      "current_version": "8.5.9",
+      "vuln_id": "GHSA-qx2v-qp2m-jg93",
+      "vuln_severity": "medium",
+      "fix_version": "8.5.10",
+      "message": "PostCSS has XSS via Unescaped </style> in its CSS Stringify Output",
+      "cwe": "N/A",
+      "cvss_score": 6.1,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "webpack-dev-server",
+      "current_version": "5.2.3",
+      "vuln_id": "GHSA-79cf-xcqc-c78w",
+      "vuln_severity": "medium",
+      "fix_version": "5.2.4",
+      "message": "webpack-dev-server vulnerable to cross-origin source code exposure on non-HTTPS origins",
+      "cwe": "N/A",
+      "cvss_score": 5.3,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "hono",
+      "current_version": "4.12.12",
+      "vuln_id": "GHSA-69xw-7hcm-h432",
+      "vuln_severity": "medium",
+      "fix_version": "4.12.16",
+      "message": "hono/jsx has Unvalidated JSX Tag Names that May Allow HTML Injection",
+      "cwe": "N/A",
+      "cvss_score": 4.7,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "composer",
+      "current_version": "2.9.5",
+      "vuln_id": "CVE-2026-40176",
+      "vuln_severity": "high",
+      "fix_version": "2.2.27",
+      "message": "Composer is a dependency manager for PHP. Versions 1.0 through 2.2.26 and 2.3 through 2.9.5 contain a command injection vulnerability in the Perforce::generateP4Command() method, which constructs shell commands by interpolating user-supplied Perforce connection parameters (port, user, client) without proper escaping. An attacker can inject arbitrary commands through these values in a malicious composer.json declaring a Perforce VCS repository, leading to command execution in the context of the user running Composer, even if Perforce is not installed. VCS repositories are only loaded from the root composer.json or the composer config directory, so this cannot be exploited through composer.json files of packages installed as dependencies. Users are at risk if they run Composer commands on untrusted projects with attacker-supplied composer.json files. This issue has been fixed in Composer 2.2.27 (2.2 LTS) and 2.9.6 (mainline).",
+      "cwe": "N/A",
+      "cvss_score": 7.8,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "serialize-javascript",
+      "current_version": "6.0.2",
+      "vuln_id": "GHSA-qj8w-gfj5-8c6v",
+      "vuln_severity": "medium",
+      "fix_version": "7.0.5",
+      "message": "Serialize JavaScript has CPU Exhaustion Denial of Service via crafted array-like objects",
+      "cwe": "N/A",
+      "cvss_score": 5.9,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "ajv",
+      "current_version": "8.12.0",
+      "vuln_id": "GHSA-2g4f-4pwh-qvx6",
+      "vuln_severity": "medium",
+      "fix_version": "8.18.0",
+      "message": "ajv has ReDoS when using `$data` option",
+      "cwe": "N/A",
+      "cvss_score": 5.5,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "ws",
+      "current_version": "8.18.0",
+      "vuln_id": "GHSA-58qx-3vcg-4xpx",
+      "vuln_severity": "medium",
+      "fix_version": "8.20.1",
+      "message": "ws: Uninitialized memory disclosure",
+      "cwe": "N/A",
+      "cvss_score": 4.4,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "twentytwentyone",
+      "current_version": "1.9.0",
+      "vuln_id": "GHSA-q87j-q95m-j3x3",
+      "vuln_severity": "critical",
+      "fix_version": "N/A",
+      "message": "Malware in twentytwentyone",
+      "cwe": "N/A",
+      "cvss_score": 0.0,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "twentytwentyone",
+      "current_version": "2.2.0",
+      "vuln_id": "GHSA-q87j-q95m-j3x3",
+      "vuln_severity": "critical",
+      "fix_version": "N/A",
+      "message": "Malware in twentytwentyone",
+      "cwe": "N/A",
+      "cvss_score": 0.0,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "@babel/plugin-transform-modules-systemjs",
+      "current_version": "7.29.0",
+      "vuln_id": "GHSA-fv7c-fp4j-7gwp",
+      "vuln_severity": "high",
+      "fix_version": "7.29.4",
+      "message": "@babel/plugin-transform-modules-systemjs generates arbitrary code when compiling malicious input",
+      "cwe": "N/A",
+      "cvss_score": 8.2,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "serialize-javascript",
+      "current_version": "6.0.2",
+      "vuln_id": "GHSA-5c6j-r48x-rmvq",
+      "vuln_severity": "high",
+      "fix_version": "7.0.3",
+      "message": "Serialize JavaScript is Vulnerable to RCE via RegExp.flags and Date.prototype.toISOString()",
+      "cwe": "N/A",
+      "cvss_score": 8.1,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "hono",
+      "current_version": "4.12.12",
+      "vuln_id": "GHSA-458j-xx4x-4375",
+      "vuln_severity": "medium",
+      "fix_version": "4.12.14",
+      "message": "hono Improperly Handles JSX Attribute Names Allows HTML Injection in hono/jsx SSR",
+      "cwe": "N/A",
+      "cvss_score": 4.3,
+      "type": "vulnerability"
+    }
+  ],
+  "grype_metadata": {
+    "grype_version": "unknown",
+    "db_location": "",
+    "scanned_path": "/workspaces/Proyecto_ProdSoftware/data/repos/wordpress-playground"
+  }
+}

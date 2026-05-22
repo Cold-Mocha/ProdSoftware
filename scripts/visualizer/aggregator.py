@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -11,7 +12,90 @@ RUTA_REPOS = RAIZ / "data" / "repos"
 RUTA_RESULTADOS = RAIZ / "data" / "results"
 RUTA_REPOS_JSON = RAIZ / "data" / "repos.json"
 
-SUFIJO_SBOM = "-sbom.json"
+SUFIJO_SBOM     = "-sbom.json"
+
+# ── Detección de archivos CI/CD ────────────────────────────────────────────
+_CICD_RE = [
+    re.compile(r'\.github/workflows/.+\.(yml|yaml)$',    re.IGNORECASE),
+    re.compile(r'(^|/)\.gitlab-ci\.(yml|yaml)$',         re.IGNORECASE),
+    re.compile(r'(^|/)Jenkinsfile(\.\w+)?$'),
+    re.compile(r'\.circleci/config\.(yml|yaml)$',        re.IGNORECASE),
+    re.compile(r'(^|/)azure-pipelines(-\w+)?\.(yml|yaml)$', re.IGNORECASE),
+    re.compile(r'(^|/)bitbucket-pipelines\.(yml|yaml)$', re.IGNORECASE),
+    re.compile(r'(^|/)\.travis\.(yml|yaml)$',            re.IGNORECASE),
+    re.compile(r'(^|/)appveyor\.(yml|yaml)$',            re.IGNORECASE),
+    re.compile(r'(^|/)\.drone\.(yml|yaml)$',             re.IGNORECASE),
+    re.compile(r'(^|/)cloudbuild\.(yaml|yml)$',          re.IGNORECASE),
+    re.compile(r'\.buildkite/.+\.(yml|yaml)$',           re.IGNORECASE),
+    re.compile(r'(^|/)wercker\.(yml|yaml)$',             re.IGNORECASE),
+    re.compile(r'(^|/)codeship-\w+\.(yml|yaml)$',        re.IGNORECASE),
+    re.compile(r'(^|/)circle\.(yml|yaml)$',              re.IGNORECASE),
+]
+
+_CICD_ARCHIVOS_RAIZ = [
+    '.gitlab-ci.yml', '.gitlab-ci.yaml',
+    'Jenkinsfile',
+    'azure-pipelines.yml', 'azure-pipelines.yaml',
+    'bitbucket-pipelines.yml', 'bitbucket-pipelines.yaml',
+    '.travis.yml', '.travis.yaml',
+    'appveyor.yml', 'appveyor.yaml',
+    '.drone.yml', '.drone.yaml',
+    'cloudbuild.yaml', 'cloudbuild.yml',
+    'wercker.yml', 'circle.yml',
+]
+_CICD_SUBDIRS = ['.github/workflows', '.circleci', '.buildkite']
+
+
+def _es_archivo_cicd(path: str | None) -> bool:
+    if not path:
+        return False
+    p = path.replace('\\', '/')
+    return any(pat.search(p) for pat in _CICD_RE)
+
+
+def _plataforma_cicd(path: str) -> str:
+    p = path.replace('\\', '/')
+    if '.github/workflows'     in p: return 'GitHub Actions'
+    if '.gitlab-ci'            in p: return 'GitLab CI'
+    if 'Jenkinsfile'           in p: return 'Jenkins'
+    if '.circleci'             in p: return 'CircleCI'
+    if 'azure-pipelines'       in p.lower(): return 'Azure DevOps'
+    if 'bitbucket-pipelines'   in p.lower(): return 'Bitbucket'
+    if '.travis'               in p: return 'Travis CI'
+    if 'appveyor'              in p.lower(): return 'AppVeyor'
+    if '.drone'                in p: return 'Drone CI'
+    if 'cloudbuild'            in p.lower(): return 'Cloud Build'
+    if '.buildkite'            in p: return 'Buildkite'
+    if 'wercker'               in p.lower(): return 'Wercker'
+    return 'CI/CD'
+
+
+def _contar_archivos_cicd() -> dict[str, list[dict]]:
+    """Escanea los repos clonados y retorna {repo_id: [{file_path, platform}]}."""
+    result: dict[str, list[dict]] = {}
+    if not RUTA_REPOS.exists():
+        return result
+    for repo_dir in RUTA_REPOS.iterdir():
+        if not repo_dir.is_dir():
+            continue
+        archivos: list[dict] = []
+        # Archivos conocidos en la raíz
+        for nombre in _CICD_ARCHIVOS_RAIZ:
+            if (repo_dir / nombre).exists():
+                archivos.append({'file_path': nombre, 'platform': _plataforma_cicd(nombre)})
+        # Directorios específicos de CI/CD
+        for subdir in _CICD_SUBDIRS:
+            d = repo_dir / subdir
+            if d.is_dir():
+                for ext in ('*.yml', '*.yaml'):
+                    for f in d.rglob(ext):
+                        rel = str(f.relative_to(repo_dir)).replace('\\', '/')
+                        archivos.append({'file_path': rel, 'platform': _plataforma_cicd(rel)})
+        # Jenkinsfile con extensión
+        for f in repo_dir.glob('Jenkinsfile.*'):
+            archivos.append({'file_path': f.name, 'platform': 'Jenkins'})
+        result[repo_dir.name] = archivos
+    return result
 SUFIJO_GRYPE = "-grype.json"
 SUFIJO_GRYPE_RAW = "-grype-raw.json"
 SUFIJO_GITLEAKS = "-gitleaks.json"
@@ -225,11 +309,13 @@ def _procesar_gitleaks() -> tuple[list[dict], list[dict]]:
                 continue
             inicio = h.get("StartLine") or h.get("startLine") or h.get("line")
             fin = h.get("EndLine") or h.get("endLine")
+            fp = h.get("File") or h.get("file") or h.get("file_path")
             findings.append({
                 "repo_id": repo_id,
                 "rule_id": h.get("RuleID") or h.get("ruleID") or h.get("rule_id"),
                 "description": h.get("Description") or h.get("description"),
-                "file_path": h.get("File") or h.get("file") or h.get("file_path"),
+                "file_path": fp,
+                "is_cicd": _es_archivo_cicd(fp),
                 "line": inicio,
                 "line_start": inicio,
                 "line_end": fin,
@@ -263,13 +349,15 @@ def _procesar_codeql() -> tuple[list[dict], list[dict]]:
                 mensaje = mensaje.get("text", "")
             inicio = region.get("startLine") if isinstance(region, dict) else None
             fin = region.get("endLine") if isinstance(region, dict) else None
+            fp_cq = issue.get("file")
             findings.append({
                 "repo_id": repo_id,
                 "rule_id": issue.get("rule_id"),
                 "severity": _mapear_severidad_codeql(issue.get("level"), props),
                 "level": issue.get("level"),
                 "message": mensaje,
-                "file_path": issue.get("file"),
+                "file_path": fp_cq,
+                "is_cicd": _es_archivo_cicd(fp_cq),
                 "start_line": inicio,
                 "end_line": fin,
                 "cwe": _extraer_cwes(props),
@@ -282,6 +370,13 @@ def construir_dataset() -> dict:
     grype_findings, grype_scans = _procesar_grype()
     gitleaks_findings, gitleaks_scans = _procesar_gitleaks()
     codeql_findings, codeql_scans = _procesar_codeql()
+
+    cicd_por_repo = _contar_archivos_cicd()
+    cicd_files = [
+        {"repo_id": repo_id, "file_path": entry["file_path"], "platform": entry["platform"]}
+        for repo_id, entries in cicd_por_repo.items()
+        for entry in entries
+    ]
 
     return {
         "meta": {
@@ -297,6 +392,7 @@ def construir_dataset() -> dict:
         "gitleaks_scans": gitleaks_scans,
         "codeql_findings": codeql_findings,
         "codeql_scans": codeql_scans,
+        "cicd_files": cicd_files,
     }
 
 

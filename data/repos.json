@@ -1,19 +1,124 @@
 {
-  "repositories": [
-    {
-      "url": "https://github.com/anthropics/claude-code-action.git",
-      "path": "data/repos/claude-code-action",
-      "ref": null
-    },
-    {
-      "url": "https://github.com/cirolini/genai-code-review.git",
-      "path": "data/repos/genai-code-review",
-      "ref": null
-    },
-    {
-      "url": "https://github.com/anomalyco/opencode.git",
-      "path": "data/repos/opencode",
-      "ref": null
-    }
-  ]
+    "repositories": [
+        {
+            "url": "https://github.com/WordPress/WordPress.git",
+            "path": "data/repos/WordPress",
+            "ref": "master",
+            "name": "WordPress",
+            "full_name": "WordPress/WordPress",
+            "language": "PHP",
+            "stars": 21136,
+            "description": "WordPress, Git-ified. This repository is just a mirror of the WordPress subversion repository. Please do not send pull requests. Submit pull requests to https://github.com/WordPress/wordpress-develop and patches to https://core.trac.wordpress.org/ instead.",
+            "default_branch": "master",
+            "pushed_at": "2026-05-22T08:54:07Z"
+        },
+        {
+            "url": "https://github.com/WordPress/gutenberg.git",
+            "path": "data/repos/gutenberg",
+            "ref": "trunk",
+            "name": "gutenberg",
+            "full_name": "WordPress/gutenberg",
+            "language": "JavaScript",
+            "stars": 11665,
+            "description": "The Block Editor project for WordPress and beyond. Plugin is available from the official repository.",
+            "default_branch": "trunk",
+            "pushed_at": "2026-05-22T11:34:05Z"
+        },
+        {
+            "url": "https://github.com/WordPress/Requests.git",
+            "path": "data/repos/Requests",
+            "ref": "develop",
+            "name": "Requests",
+            "full_name": "WordPress/Requests",
+            "language": "PHP",
+            "stars": 3573,
+            "description": "Requests for PHP is a humble HTTP request library. It simplifies how you interact with other sites and takes away all your worries.",
+            "default_branch": "develop",
+            "pushed_at": "2026-05-21T00:18:53Z"
+        },
+        {
+            "url": "https://github.com/WordPress/wordpress-develop.git",
+            "path": "data/repos/wordpress-develop",
+            "ref": "trunk",
+            "name": "wordpress-develop",
+            "full_name": "WordPress/wordpress-develop",
+            "language": "PHP",
+            "stars": 3332,
+            "description": "WordPress Develop, Git-ified. Synced from git://develop.git.wordpress.org/, including branches and tags! This repository is just a mirror of the WordPress subversion repository. Please include a link to a pre-existing ticket on https://core.trac.wordpress.org/ with every pull request.",
+            "default_branch": "trunk",
+            "pushed_at": "2026-05-22T08:53:06Z"
+        },
+        {
+            "url": "https://github.com/WordPress/WordPress-Coding-Standards.git",
+            "path": "data/repos/WordPress-Coding-Standards",
+            "ref": "develop",
+            "name": "WordPress-Coding-Standards",
+            "full_name": "WordPress/WordPress-Coding-Standards",
+            "language": "PHP",
+            "stars": 2751,
+            "description": "PHP_CodeSniffer rules (sniffs) to enforce WordPress coding conventions",
+            "default_branch": "develop",
+            "pushed_at": "2026-05-21T14:35:27Z"
+        },
+        {
+            "url": "https://github.com/WordPress/wordpress-playground.git",
+            "path": "data/repos/wordpress-playground",
+            "ref": "trunk",
+            "name": "wordpress-playground",
+            "full_name": "WordPress/wordpress-playground",
+            "language": "JavaScript",
+            "stars": 1947,
+            "description": "Run WordPress in the browser via WebAssembly PHP",
+            "default_branch": "trunk",
+            "pushed_at": "2026-05-22T11:23:13Z"
+        },
+        {
+            "url": "https://github.com/WordPress/agent-skills.git",
+            "path": "data/repos/agent-skills",
+            "ref": "trunk",
+            "name": "agent-skills",
+            "full_name": "WordPress/agent-skills",
+            "language": "JavaScript",
+            "stars": 1530,
+            "description": "Expert-level WordPress knowledge for AI coding assistants - blocks, themes, plugins, and best practices",
+            "default_branch": "trunk",
+            "pushed_at": "2026-05-18T05:40:14Z"
+        },
+        {
+            "url": "https://github.com/WordPress/gutenberg-examples.git",
+            "path": "data/repos/gutenberg-examples",
+            "ref": "trunk",
+            "name": "gutenberg-examples",
+            "full_name": "WordPress/gutenberg-examples",
+            "language": "JavaScript",
+            "stars": 1175,
+            "description": "Examples for extending WordPress/Gutenberg with blocks.",
+            "default_branch": "trunk",
+            "pushed_at": "2023-12-22T15:08:15Z"
+        },
+        {
+            "url": "https://github.com/WordPress/mcp-adapter.git",
+            "path": "data/repos/mcp-adapter",
+            "ref": "trunk",
+            "name": "mcp-adapter",
+            "full_name": "WordPress/mcp-adapter",
+            "language": "PHP",
+            "stars": 1130,
+            "description": "An MCP adapter that bridges the Abilities API to the Model Context Protocol, enabling MCP clients to discover and invoke WordPress plugin, theme, and core abilities programmatically.",
+            "default_branch": "trunk",
+            "pushed_at": "2026-05-19T21:11:15Z"
+        },
+        {
+            "url": "https://github.com/WordPress/two-factor.git",
+            "path": "data/repos/two-factor",
+            "ref": "master",
+            "name": "two-factor",
+            "full_name": "WordPress/two-factor",
+            "language": "PHP",
+            "stars": 808,
+            "description": "Two-Factor Authentication for WordPress.",
+            "default_branch": "master",
+            "pushed_at": "2026-05-13T19:53:27Z"
+        }
+    ]
 }

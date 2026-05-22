@@ -1,7 +1,7 @@
 import requests
 import json
 
-ORG = "sveltejs"
+ORG = "WordPress"
 BASE_PATH = "data/repos"
 TOP_N = 10
 

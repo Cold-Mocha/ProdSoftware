@@ -34,6 +34,7 @@
   --codeql:    #3d9bff;
   --gitleaks:  #ff3d5c;
   --grype:     #ff8c42;
+  --cicd:      #f59e0b;
   --radius:    8px;
 }
 
@@ -704,6 +705,11 @@ tr.cv-hl .cv-line-code { color:var(--text); }
           CodeQL
           <span class="nav-badge" id="nb-codeql">—</span>
         </div>
+        <div class="nav-item" data-view="cicd" onclick="navigate('cicd')">
+          <span class="nav-dot" style="background:var(--cicd)"></span>
+          CI/CD Pipelines
+          <span class="nav-badge" id="nb-cicd">—</span>
+        </div>
       </div>
     </div>
 
@@ -770,6 +776,12 @@ tr.cv-hl .cv-line-code { color:var(--text); }
           <div class="kpi-label">CVEs (Grype)</div>
           <div class="kpi-sub" id="k-grype-sub"></div>
         </div>
+        <div class="kpi-card" style="--card-accent:var(--cicd);cursor:pointer" onclick="navigate('cicd')">
+          <div class="kpi-icon">⚙️</div>
+          <div class="kpi-value" id="k-cicd">—</div>
+          <div class="kpi-label">Pipelines CI/CD</div>
+          <div class="kpi-sub" id="k-cicd-sub"></div>
+        </div>
       </div>
 
       <div class="progress-card">
@@ -796,6 +808,7 @@ tr.cv-hl .cv-line-code { color:var(--text); }
               <th onclick="sortTable('grype_count')"  data-col="grype_count">CVEs <span class="si">↕</span></th>
               <th onclick="sortTable('sec_count')"    data-col="sec_count">Secretos <span class="si">↕</span></th>
               <th onclick="sortTable('sbom_count')"   data-col="sbom_count">SBOM <span class="si">↕</span></th>
+              <th onclick="sortTable('cicd_count')"  data-col="cicd_count">CI/CD <span class="si">↕</span></th>
               <th>Detalle</th>
             </tr></thead>
             <tbody id="repo-tbody"></tbody>
@@ -942,6 +955,76 @@ tr.cv-hl .cv-line-code { color:var(--text); }
       </div>
     </div>
 
+    <div class="view" id="view-cicd">
+      <div class="view-header">
+        <div class="view-header-icon" style="background:rgba(245,158,11,.15)">⚙️</div>
+        <div><h2>Pipelines CI/CD</h2><div class="sub">Archivos de automatización detectados: GitHub Actions · GitLab CI · Jenkins · CircleCI · Azure DevOps…</div></div>
+        <div class="total-badge" id="cicd-total-badge" style="color:var(--cicd);border-color:rgba(245,158,11,.3);background:rgba(245,158,11,.08)">—</div>
+      </div>
+      <div class="cards-row">
+        <div class="kpi-card" style="--card-accent:var(--cicd)">
+          <div class="kpi-icon">📄</div>
+          <div class="kpi-value" id="kc-files">—</div>
+          <div class="kpi-label">Archivos CI/CD</div>
+          <div class="kpi-sub" id="kc-files-sub"></div>
+        </div>
+        <div class="kpi-card" style="--card-accent:var(--gitleaks)">
+          <div class="kpi-icon">🔐</div>
+          <div class="kpi-value" id="kc-secrets">—</div>
+          <div class="kpi-label">Secretos en CI/CD</div>
+          <div class="kpi-sub" id="kc-secrets-sub"></div>
+        </div>
+        <div class="kpi-card" style="--card-accent:var(--codeql)">
+          <div class="kpi-icon">🔍</div>
+          <div class="kpi-value" id="kc-issues">—</div>
+          <div class="kpi-label">Issues CodeQL en CI/CD</div>
+          <div class="kpi-sub" id="kc-issues-sub"></div>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="chart-card">
+          <h3>Plataformas CI/CD detectadas</h3>
+          <p class="sub">Distribución de archivos por plataforma de automatización</p>
+          <div class="chart-wrap h240"><canvas id="chart-cicd-platforms"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Archivos CI/CD por repositorio</h3>
+          <p class="sub">Cantidad de pipelines configurados por repo</p>
+          <div class="chart-wrap h240"><canvas id="chart-cicd-repos"></canvas></div>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="chart-card">
+          <h3>Secretos Gitleaks en archivos CI/CD</h3>
+          <p class="sub">Credenciales y tokens filtrados por estar en archivos de pipeline</p>
+          <div class="chart-wrap h220"><canvas id="chart-cicd-gl-types"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Issues CodeQL en archivos CI/CD</h3>
+          <p class="sub">Vulnerabilidades de código encontradas específicamente en pipelines</p>
+          <div class="chart-wrap h220"><canvas id="chart-cicd-cq-sev"></canvas></div>
+        </div>
+      </div>
+      <div class="table-card">
+        <div class="table-card-header">
+          <h3>Archivos CI/CD encontrados</h3>
+          <input class="tbl-search" id="cicd-file-search" placeholder="Filtrar por repo, plataforma, archivo…" oninput="filterCicdTable(this.value)">
+        </div>
+        <div class="table-wrap">
+          <table id="cicd-file-table">
+            <thead><tr>
+              <th>Repositorio</th>
+              <th>Plataforma</th>
+              <th>Archivo</th>
+              <th>Secretos</th>
+              <th>Issues CodeQL</th>
+            </tr></thead>
+            <tbody id="cicd-file-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
     <div class="view" id="view-search">
 
       <div id="search-section">
@@ -979,7 +1062,7 @@ tr.cv-hl .cv-line-code { color:var(--text); }
             </div>
           </div>
           <div id="rd-pipeline" class="chips" style="margin-bottom:14px"></div>
-          <div class="repo-stats-row">
+          <div class="repo-stats-row" style="grid-template-columns:repeat(5,1fr)">
             <div class="repo-stat">
               <div class="repo-stat-val" id="rd-gl-cnt" style="color:var(--gitleaks)">—</div>
               <div class="repo-stat-label">Secretos</div>
@@ -995,6 +1078,10 @@ tr.cv-hl .cv-line-code { color:var(--text); }
             <div class="repo-stat">
               <div class="repo-stat-val" id="rd-codeql-cnt" style="color:var(--codeql)">—</div>
               <div class="repo-stat-label">CodeQL</div>
+            </div>
+            <div class="repo-stat">
+              <div class="repo-stat-val" id="rd-cicd-cnt" style="color:var(--cicd)">—</div>
+              <div class="repo-stat-label">CI/CD Pipelines</div>
             </div>
           </div>
         </div>
@@ -1135,6 +1222,55 @@ tr.cv-hl .cv-line-code { color:var(--text); }
           </div>
         </div>
 
+        <div class="tool-section open" id="ts-cicd">
+          <div class="tool-section-header" onclick="toggleSection('ts-cicd')">
+            <div class="tool-section-icon" style="background:rgba(245,158,11,.15)">⚙️</div>
+            <div class="tool-section-title">CI/CD Pipelines — Archivos de automatización</div>
+            <div class="tool-section-count" id="ts-cicd-count">0</div>
+            <div class="tool-section-chevron">▼</div>
+          </div>
+          <div class="tool-section-body">
+            <div class="tool-section-inner">
+              <div class="tool-mini-chart">
+                <div class="tool-mini-chart-title">Plataformas</div>
+                <div class="chart-wrap h160"><canvas id="repo-chart-cicd"></canvas></div>
+              </div>
+              <div>
+                <div style="margin-bottom:10px;font-size:11px;color:var(--text3)">
+                  Secretos en CI/CD: <span id="rd-cicd-gl" style="color:var(--gitleaks);font-family:'JetBrains Mono',monospace">0</span>
+                  &nbsp;·&nbsp; Issues CodeQL en CI/CD: <span id="rd-cicd-cq" style="color:var(--codeql);font-family:'JetBrains Mono',monospace">0</span>
+                </div>
+                <div class="tool-table-wrap">
+                  <table>
+                    <thead><tr>
+                      <th>Plataforma</th>
+                      <th>Archivo</th>
+                      <th>Secretos</th>
+                      <th>Issues CodeQL</th>
+                    </tr></thead>
+                    <tbody id="repo-cicd-tbody"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div style="border-top:1px solid var(--border);padding:14px 20px">
+              <div style="font-family:'Oxanium',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:10px">Secretos detectados en archivos CI/CD</div>
+              <div class="tool-table-wrap">
+                <table>
+                  <thead><tr>
+                    <th>Tipo / Regla</th>
+                    <th>Archivo</th>
+                    <th>Línea</th>
+                    <th>Autor</th>
+                    <th>Fecha</th>
+                  </tr></thead>
+                  <tbody id="repo-cicd-gl-tbody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -1198,8 +1334,28 @@ let currentRepo  = null;
 
 const VIEW_TITLES = {
   home:'Inicio', gitleaks:'Gitleaks', grype:'Grype / CVEs',
-  sbom:'SBOM', codeql:'CodeQL', search:'Buscar Repositorio',
+  sbom:'SBOM', codeql:'CodeQL', cicd:'CI/CD Pipelines', search:'Buscar Repositorio',
 };
+
+function cicdPlatform(path) {
+  const p = (path||'').replace(/\\/g,'/');
+  if (p.includes('.github/workflows'))    return 'GitHub Actions';
+  if (p.includes('.gitlab-ci'))           return 'GitLab CI';
+  if (/Jenkinsfile/i.test(p))             return 'Jenkins';
+  if (p.includes('.circleci'))            return 'CircleCI';
+  if (/azure-pipelines/i.test(p))         return 'Azure DevOps';
+  if (/bitbucket-pipelines/i.test(p))     return 'Bitbucket';
+  if (p.includes('.travis'))              return 'Travis CI';
+  if (/appveyor/i.test(p))               return 'AppVeyor';
+  if (p.includes('.drone'))               return 'Drone CI';
+  if (/cloudbuild/i.test(p))             return 'Cloud Build';
+  if (p.includes('.buildkite'))           return 'Buildkite';
+  if (/wercker/i.test(p))                return 'Wercker';
+  return 'CI/CD';
+}
+
+let cicdFileFilter = '';
+let cicdFileData  = [];
 
 function navigate(viewId) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
@@ -1355,6 +1511,7 @@ function renderAll(db) {
   const grypef    = db.grype_findings    || [];
   const gitleaksF = db.gitleaks_findings || [];
   const sbomC     = db.sbom_components   || [];
+  const cicdFiles = db.cicd_files        || [];
 
   const doneCodeql   = new Set((db.codeql_scans   ||[]).map(s=>String(s.repo_id)));
   const doneGrype    = new Set((db.grype_scans    ||[]).map(s=>String(s.repo_id)));
@@ -1365,17 +1522,19 @@ function renderAll(db) {
   txt('nb-grype',    fmt(grypef.length));
   txt('nb-sbom',     fmt(sbomC.length));
   txt('nb-codeql',   fmt(codeqlF.length));
+  txt('nb-cicd',     fmt(cicdFiles.length));
 
   txt('gl-total-badge',    fmt(gitleaksF.length) + ' hallazgos');
   txt('grype-total-badge', fmt(grypef.length) + ' CVEs');
   txt('sbom-total-badge',  fmt(sbomC.length) + ' componentes');
   txt('codeql-total-badge',fmt(codeqlF.length) + ' hallazgos');
 
-  renderHome(repos, codeqlF, grypef, gitleaksF, sbomC, doneCodeql, doneGrype, doneGitleaks, doneSBOM);
+  renderHome(repos, codeqlF, grypef, gitleaksF, sbomC, cicdFiles, doneCodeql, doneGrype, doneGitleaks, doneSBOM);
   renderGitleaks(gitleaksF, repos);
   renderGrype(grypef, repos);
   renderSBOM(sbomC, repos);
   renderCodeQL(codeqlF, repos);
+  renderCICD(cicdFiles, gitleaksF, codeqlF, repos);
 
   if (currentView === 'search') {
     const rdEl = document.getElementById('repo-detail');
@@ -1395,10 +1554,12 @@ function renderAll(db) {
   }
 }
 
-function renderHome(repos, codeqlF, grypef, gitleaksF, sbomC, doneCodeql, doneGrype, doneGitleaks, doneSBOM) {
+function renderHome(repos, codeqlF, grypef, gitleaksF, sbomC, cicdFiles, doneCodeql, doneGrype, doneGitleaks, doneSBOM) {
   const cloned  = repos.filter(r=>r.miner_status==='cloned').length;
   const glRepos = new Set(gitleaksF.map(f=>f.repo_id)).size;
   const ecos    = new Set(sbomC.map(c=>c.ecosystem).filter(Boolean)).size;
+  const cicdRepos = new Set(cicdFiles.map(f=>f.repo_id)).size;
+  const cicdPlatforms = new Set(cicdFiles.map(f=>f.platform||cicdPlatform(f.file_path))).size;
 
   txt('k-repos',        fmt(repos.length));
   txt('k-repos-sub',    `${cloned} clonados · ${repos.length-cloned} pendientes`);
@@ -1410,6 +1571,8 @@ function renderHome(repos, codeqlF, grypef, gitleaksF, sbomC, doneCodeql, doneGr
   txt('k-codeql-sub',   `${codeqlF.filter(f=>sk(f.severity)==='high').length} altos`);
   txt('k-grype',        fmt(grypef.length));
   txt('k-grype-sub',    `${grypef.filter(f=>sk(f.severity)==='critical').length} críticos`);
+  txt('k-cicd',         fmt(cicdFiles.length));
+  txt('k-cicd-sub',     `${cicdRepos} repos · ${cicdPlatforms} plataformas`);
 
   const total = repos.length || 1;
   const bars = [
@@ -1431,6 +1594,7 @@ function renderHome(repos, codeqlF, grypef, gitleaksF, sbomC, doneCodeql, doneGr
   const grypefByRepo   = countByRepo(grypef);
   const gitleaksByRepo = countByRepo(gitleaksF);
   const sbomByRepo     = countByRepo(sbomC);
+  const cicdByRepo     = countByRepo(cicdFiles);
 
   tableData = repos.map(r => ({
     id:String(r.id), full_name:r.full_name||r.name||'', language:r.language||'—',
@@ -1439,6 +1603,7 @@ function renderHome(repos, codeqlF, grypef, gitleaksF, sbomC, doneCodeql, doneGr
     grype_count:grypefByRepo[r.id]||0,   grype_done:doneGrype.has(String(r.id)),
     sec_count:gitleaksByRepo[r.id]||0,   gl_done:doneGitleaks.has(String(r.id)),
     sbom_count:sbomByRepo[r.id]||0,      sbom_done:doneSBOM.has(String(r.id)),
+    cicd_count:cicdByRepo[r.id]||0,
   }));
   renderTable();
 }
@@ -1486,9 +1651,10 @@ function renderTable() {
     <td class="num">${numCell(r.grype_count,r.grype_done,'var(--grype)')}</td>
     <td class="num">${numCell(r.sec_count,r.gl_done,'var(--gitleaks)')}</td>
     <td class="num">${numCell(r.sbom_count,r.sbom_done,'var(--sbom)')}</td>
+    <td class="num" style="color:${r.cicd_count>0?'var(--cicd)':'var(--text3)'}">${r.cicd_count>0?fmt(r.cicd_count):'—'}</td>
     <td><button onclick="goToRepo('${r.id}')" style="background:var(--surface2);border:1px solid var(--border2);color:var(--accent);border-radius:5px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:'Source Sans 3',sans-serif">Ver →</button></td>
   </tr>`).join('');
-  if (!rows.length) tbody.innerHTML='<tr><td colspan="8" class="no-data">Sin resultados</td></tr>';
+  if (!rows.length) tbody.innerHTML='<tr><td colspan="9" class="no-data">Sin resultados</td></tr>';
 }
 function sortTable(col) { if(sortCol===col) sortAsc=!sortAsc; else{sortCol=col;sortAsc=false;} renderTable(); }
 function filterTable(q) { filterQ=q; renderTable(); }
@@ -1765,6 +1931,137 @@ function renderCodeQL(codeqlF, repos) {
   } else emptyChart('chart-codeql-files');
 }
 
+function renderCICD(cicdFiles, gitleaksF, codeqlF, repos) {
+  cicdFileData = cicdFiles;
+
+  const repoNames = {};
+  for (const r of repos) repoNames[r.id] = ((r.full_name||r.name||'').split('/').pop()||r.name||'?');
+
+  if (!cicdFiles.length) {
+    txt('cicd-total-badge', '0 archivos');
+    txt('kc-files', '0'); txt('kc-files-sub', '');
+    txt('kc-secrets', '0'); txt('kc-secrets-sub', '');
+    txt('kc-issues', '0');  txt('kc-issues-sub', '');
+    ['chart-cicd-platforms','chart-cicd-repos','chart-cicd-gl-types','chart-cicd-cq-sev'].forEach(id=>emptyChart(id));
+    const tb = document.getElementById('cicd-file-tbody');
+    if (tb) tb.innerHTML = '<tr><td colspan="5" class="no-data">Sin archivos CI/CD detectados</td></tr>';
+    return;
+  }
+
+  txt('cicd-total-badge', fmt(cicdFiles.length) + ' archivos');
+
+  const glCicd = gitleaksF.filter(f => f.is_cicd);
+  const cqCicd = codeqlF.filter(f => f.is_cicd);
+
+  const reposWithCicd  = new Set(cicdFiles.map(f => f.repo_id)).size;
+  const platformsUniq  = new Set(cicdFiles.map(f => f.platform || cicdPlatform(f.file_path))).size;
+
+  txt('kc-files',       fmt(cicdFiles.length));
+  txt('kc-files-sub',   `${reposWithCicd} repos · ${platformsUniq} plataformas`);
+  txt('kc-secrets',     fmt(glCicd.length));
+  txt('kc-secrets-sub', glCicd.length ? `${new Set(glCicd.map(f=>f.rule_id)).size} tipos` : 'sin secretos');
+  txt('kc-issues',      fmt(cqCicd.length));
+  txt('kc-issues-sub',  cqCicd.length ? `${cqCicd.filter(f=>sk(f.severity)==='high').length} altos` : 'sin issues');
+
+  const platCnt = {};
+  for (const f of cicdFiles) { const p=f.platform||cicdPlatform(f.file_path); platCnt[p]=(platCnt[p]||0)+1; }
+  const topPlat = Object.entries(platCnt).sort((a,b)=>b[1]-a[1]);
+  if (topPlat.length) {
+    mkChart('chart-cicd-platforms','doughnut',{
+      labels:topPlat.map(([k])=>k),
+      datasets:[{data:topPlat.map(([,v])=>v),backgroundColor:ECO_PAL,borderColor:'#0e1420',borderWidth:2}],
+    },{plugins:{legend:DONUT_LEGEND,tooltip:{callbacks:{label:ctx=>` ${ctx.label}: ${ctx.raw}`}}},cutout:'55%'});
+  } else emptyChart('chart-cicd-platforms');
+
+  const repoCnt = {};
+  for (const f of cicdFiles) { const n=repoNames[f.repo_id]||'?'; repoCnt[n]=(repoCnt[n]||0)+1; }
+  const topRepos = Object.entries(repoCnt).sort((a,b)=>b[1]-a[1]).slice(0,12);
+  if (topRepos.length) {
+    mkChart('chart-cicd-repos','bar',{
+      labels:topRepos.map(([k])=>k).reverse(),
+      datasets:[{data:topRepos.map(([,v])=>v).reverse(),backgroundColor:'#f59e0bcc',borderRadius:3}],
+    },{indexAxis:'y',plugins:{legend:{display:false}},scales:BAR_SCALES_H});
+  } else emptyChart('chart-cicd-repos');
+
+  if (glCicd.length) {
+    const typeCnt={};
+    for (const f of glCicd) { const k=f.rule_id||'unknown'; typeCnt[k]=(typeCnt[k]||0)+1; }
+    const topTypes=Object.entries(typeCnt).sort((a,b)=>b[1]-a[1]).slice(0,10);
+    mkChart('chart-cicd-gl-types','bar',{
+      labels:topTypes.map(([k])=>k.length>28?k.slice(0,26)+'…':k).reverse(),
+      datasets:[{data:topTypes.map(([,v])=>v).reverse(),backgroundColor:'#ff3d5ccc',borderRadius:3}],
+    },{indexAxis:'y',plugins:{legend:{display:false}},scales:BAR_SCALES_H});
+  } else emptyChart('chart-cicd-gl-types','Sin secretos en CI/CD');
+
+  if (cqCicd.length) {
+    const sevMap=groupCount(cqCicd,'severity');
+    const sevL=SEV_ORDER.filter(s=>sevMap[s]);
+    mkChart('chart-cicd-cq-sev','bar',{
+      labels:sevL.map(s=>s.charAt(0).toUpperCase()+s.slice(1)),
+      datasets:[{data:sevL.map(s=>sevMap[s]),backgroundColor:sevL.map(s=>C_SEV[s]),borderRadius:4}],
+    },{plugins:{legend:{display:false}},scales:{
+      x:{ticks:{color:'#7a92b8'},grid:{color:'#1c2d47'}},
+      y:{ticks:{color:'#3d5272'},grid:{color:'#1c2d47'}},
+    }});
+  } else emptyChart('chart-cicd-cq-sev','Sin issues CodeQL en CI/CD');
+
+  const glByFile={}, cqByFile={};
+  for (const f of glCicd) { const k=String(f.repo_id)+'::'+f.file_path; glByFile[k]=(glByFile[k]||0)+1; }
+  for (const f of cqCicd) { const k=String(f.repo_id)+'::'+f.file_path; cqByFile[k]=(cqByFile[k]||0)+1; }
+
+  _renderCicdFileTable(cicdFiles, glByFile, cqByFile, repoNames);
+}
+
+function _renderCicdFileTable(files, glByFile, cqByFile, repoNames) {
+  const q = cicdFileFilter.toLowerCase();
+  const filtered = q ? files.filter(f => {
+    const repo = (repoNames||{})[f.repo_id] || String(f.repo_id);
+    const plat = f.platform || cicdPlatform(f.file_path);
+    return (repo + f.file_path + plat).toLowerCase().includes(q);
+  }) : files;
+
+  const tbody = document.getElementById('cicd-file-tbody');
+  if (!tbody) return;
+  if (!filtered.length) {
+    tbody.innerHTML = '<tr><td colspan="5" class="no-data">Sin resultados</td></tr>';
+    return;
+  }
+
+  tbody.innerHTML = filtered.map(f => {
+    const repoName = (repoNames||{})[f.repo_id] || String(f.repo_id);
+    const plat = f.platform || cicdPlatform(f.file_path);
+    const key  = String(f.repo_id) + '::' + f.file_path;
+    const gl   = glByFile[key] || 0;
+    const cq   = cqByFile[key] || 0;
+    return `<tr>
+      <td class="name-cell">${repoName}</td>
+      <td><span class="lang-badge" style="background:rgba(245,158,11,.12);color:var(--cicd);border-color:rgba(245,158,11,.3)">${plat}</span></td>
+      <td class="mono path" title="${f.file_path}">${shortPath(f.file_path,50)}</td>
+      <td class="num" style="color:${gl?'var(--gitleaks)':'var(--text3)'}">${gl||'—'}</td>
+      <td class="num" style="color:${cq?'var(--codeql)':'var(--text3)'}">${cq||'—'}</td>
+    </tr>`;
+  }).join('');
+}
+
+function filterCicdTable(value) {
+  cicdFileFilter = value;
+  if (!DB) return;
+  const cicdFiles  = DB.cicd_files        || [];
+  const gitleaksF  = DB.gitleaks_findings || [];
+  const codeqlF    = DB.codeql_findings   || [];
+  const repos      = DB.repositories      || [];
+  const repoNames  = {};
+  for (const r of repos) repoNames[r.id] = ((r.full_name||r.name||'').split('/').pop()||r.name||'?');
+
+  const glCicd = gitleaksF.filter(f => f.is_cicd);
+  const cqCicd = codeqlF.filter(f => f.is_cicd);
+  const glByFile={}, cqByFile={};
+  for (const f of glCicd) { const k=String(f.repo_id)+'::'+f.file_path; glByFile[k]=(glByFile[k]||0)+1; }
+  for (const f of cqCicd) { const k=String(f.repo_id)+'::'+f.file_path; cqByFile[k]=(cqByFile[k]||0)+1; }
+
+  _renderCicdFileTable(cicdFiles, glByFile, cqByFile, repoNames);
+}
+
 function onSearchInput(q) {
   if (!DB) return;
   const repos = DB.repositories || [];
@@ -1864,15 +2161,24 @@ function renderRepoDetail(repoId) {
     chip('CodeQL',   doneCodeql.has(rid)?'done':'wait'),
   ].join('');
 
+  const cicdForRepo = (DB.cicd_files||[]).filter(f=>String(f.repo_id)===rid);
+  const glCicd  = glFindings.filter(f => f.is_cicd);
+  const cqCicd  = codeqlFindings.filter(f => f.is_cicd);
+
   txt('rd-gl-cnt',    fmt(glFindings.length));
   txt('rd-grype-cnt', fmt(grypeFindings.length));
   txt('rd-sbom-cnt',  fmt(sbomComps.length));
   txt('rd-codeql-cnt',fmt(codeqlFindings.length));
+  txt('rd-cicd-cnt',  fmt(cicdForRepo.length));
 
   txt('ts-gl-count',    fmt(glFindings.length));
   txt('ts-grype-count', fmt(grypeFindings.length));
   txt('ts-sbom-count',  fmt(sbomComps.length));
   txt('ts-codeql-count',fmt(codeqlFindings.length));
+  txt('ts-cicd-count',  fmt(cicdForRepo.length));
+
+  txt('rd-cicd-gl', fmt(glCicd.length));
+  txt('rd-cicd-cq', fmt(cqCicd.length));
 
   ['filter-gl','filter-grype','filter-sbom','filter-codeql'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
 
@@ -1881,10 +2187,12 @@ function renderRepoDetail(repoId) {
     renderMiniGrype(grypeFindings);
     renderMiniSBOM(sbomComps);
     renderMiniCodeQL(codeqlFindings);
+    renderMiniCICD(cicdForRepo);
     renderFindingsTable('gl');
     renderFindingsTable('grype');
     renderFindingsTable('sbom');
     renderFindingsTable('codeql');
+    renderCicdRepoTable(cicdForRepo, glCicd, cqCicd);
   }, 60);
 }
 
@@ -1937,6 +2245,57 @@ function renderMiniCodeQL(findings) {
       y:{ticks:{color:'#3d5272'},grid:{color:'#1c2d47'}},
     }});
   } else emptyChart('repo-chart-codeql','Sin hallazgos');
+}
+
+function renderMiniCICD(cicdFiles) {
+  if (!cicdFiles.length) { emptyChart('repo-chart-cicd','Sin CI/CD'); return; }
+  const platCnt={};
+  for (const f of cicdFiles) { const p=f.platform||cicdPlatform(f.file_path); platCnt[p]=(platCnt[p]||0)+1; }
+  const top=Object.entries(platCnt).sort((a,b)=>b[1]-a[1]);
+  mkChart('repo-chart-cicd','doughnut',{
+    labels:top.map(([k])=>k),
+    datasets:[{data:top.map(([,v])=>v),backgroundColor:ECO_PAL,borderColor:'#0e1420',borderWidth:2}],
+  },{plugins:{legend:{...DONUT_LEGEND},tooltip:{callbacks:{label:ctx=>` ${ctx.label}: ${ctx.raw}`}}},cutout:'55%'});
+}
+
+function renderCicdRepoTable(cicdFiles, glCicd, cqCicd) {
+  const glByFile={}, cqByFile={};
+  for (const f of glCicd) { const k=f.file_path; glByFile[k]=(glByFile[k]||0)+1; }
+  for (const f of cqCicd) { const k=f.file_path; cqByFile[k]=(cqByFile[k]||0)+1; }
+
+  const tbody = document.getElementById('repo-cicd-tbody');
+  if (tbody) {
+    if (!cicdFiles.length) {
+      tbody.innerHTML='<tr><td colspan="4" class="no-data">Sin archivos CI/CD en este repo</td></tr>';
+    } else {
+      tbody.innerHTML = cicdFiles.map(f => {
+        const plat = f.platform || cicdPlatform(f.file_path);
+        const gl   = glByFile[f.file_path] || 0;
+        const cq   = cqByFile[f.file_path] || 0;
+        return `<tr>
+          <td><span class="lang-badge" style="background:rgba(245,158,11,.12);color:var(--cicd);border-color:rgba(245,158,11,.3)">${plat}</span></td>
+          <td class="mono path" title="${f.file_path}">${shortPath(f.file_path,50)}</td>
+          <td class="num" style="color:${gl?'var(--gitleaks)':'var(--text3)'}">${gl||'—'}</td>
+          <td class="num" style="color:${cq?'var(--codeql)':'var(--text3)'}">${cq||'—'}</td>
+        </tr>`;
+      }).join('');
+    }
+  }
+
+  const glTbody = document.getElementById('repo-cicd-gl-tbody');
+  if (glTbody) {
+    if (!glCicd.length) {
+      glTbody.innerHTML='<tr><td colspan="5" class="no-data">Sin secretos en archivos CI/CD</td></tr>';
+    } else {
+      glTbody.innerHTML = glCicd.map(f => `<tr>
+        <td class="mono" style="color:var(--critical)">${f.rule_id||f.description||'—'}</td>
+        <td class="mono path" title="${f.file_path||''}">${shortPath(f.file_path,50)}</td>
+        <td class="num">${f.line||'—'}</td>
+        <td style="max-width:120px;overflow:hidden;text-overflow:ellipsis">${f.author||'—'}</td>
+        <td class="mono">${f.date?String(f.date).slice(0,10):'—'}</td>
+      </tr>`).join('');
+    }
+  }
 }
 
 function filterFindings(tool) {

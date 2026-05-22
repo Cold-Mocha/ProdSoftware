@@ -342,45 +342,47 @@ class GrypeAnalyzer:
 
     def _procesar_vulnerabilidad_grype(self, vuln: dict) -> dict:
         """Convierte un match de Grype a formato normalizado."""
-        # Extraer información del match de Grype
-        artifact = vuln.get("artifact", {})
-        vulnerability = vuln.get("vulnerability", {})
-        metadata = vuln.get("metadata", {})
+        artifact      = vuln.get("artifact", {}) or {}
+        vulnerability = vuln.get("vulnerability", {}) or {}
 
-        # Determinar severidad (Grype usa CVSS score)
-        cvss_score = metadata.get("cvss", [{}])[0].get("score", 0) if metadata.get("cvss") else 0
-        severity = self._determinar_severidad_por_cvss(cvss_score)
+        # Severidad y CVSS vienen dentro de vulnerability
+        severidad_str = vulnerability.get("severity", "unknown")
+        severity = severidad_str.lower() if severidad_str else "unknown"
+
+        cvss_list  = vulnerability.get("cvss", [])
+        cvss_score = 0.0
+        if cvss_list:
+            for entry in cvss_list:
+                score = (entry.get("metrics") or {}).get("baseScore", 0)
+                if score:
+                    cvss_score = float(score)
+                    break
+
+        # Fix está dentro de vulnerability
+        fix_info      = vulnerability.get("fix", {}) or {}
+        fix_versions  = fix_info.get("versions", [])
+        fix_version   = fix_versions[0] if fix_versions else "N/A"
 
         return {
-            "package_name": artifact.get("name", "unknown"),
+            "package_name":    artifact.get("name", "unknown"),
             "current_version": artifact.get("version", "unknown"),
-            "vuln_id": vulnerability.get("id", "unknown"),
-            "vuln_severity": severity,
-            "fix_version": vuln.get("fix", {}).get("versions", ["N/A"])[0] if vuln.get("fix") else "N/A",
-            "message": vulnerability.get("description", ""),
-            "cwe": metadata.get("cwe", "N/A"),
-            "cvss_score": cvss_score,
-            "type": vuln.get("type", "vulnerability"),
+            "vuln_id":         vulnerability.get("id", "unknown"),
+            "vuln_severity":   severity,
+            "fix_version":     fix_version,
+            "message":         vulnerability.get("description", ""),
+            "cwe":             "N/A",
+            "cvss_score":      cvss_score,
+            "type":            "vulnerability",
         }
-
-    def _determinar_severidad_por_cvss(self, cvss_score: float) -> str:
-        """Mapea CVSS score a nivel de severidad."""
-        if cvss_score >= 9.0:
-            return "critical"
-        elif cvss_score >= 7.0:
-            return "high"
-        elif cvss_score >= 4.0:
-            return "medium"
-        else:
-            return "low"
 
     def _extraer_metadata(self, grype_data: dict) -> dict:
         """Extrae metadata de la salida de Grype."""
-        descriptor = grype_data.get("descriptor", {})
+        source = grype_data.get("source") or {}
+        descriptor = grype_data.get("descriptor") or {}
         return {
             "grype_version": grype_data.get("formatVersion", "unknown"),
-            "db_location": grype_data.get("source", {}).get("dbPath", ""),
-            "scanned_path": grype_data.get("source", {}).get("target", ""),
+            "db_location": source.get("dbPath", ""),
+            "scanned_path": source.get("target", ""),
         }
 
     def _eliminar_archivos_parciales(self, repo_name: str):

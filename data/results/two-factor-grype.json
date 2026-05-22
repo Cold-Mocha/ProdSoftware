@@ -1,0 +1,60 @@
+{
+  "total_vulnerabilities": 4,
+  "vulnerabilities_by_severity": {
+    "critical": 0,
+    "high": 0,
+    "medium": 4,
+    "low": 0
+  },
+  "vulnerabilities": [
+    {
+      "package_name": "shivammathur/setup-php",
+      "current_version": "v2.37.0",
+      "vuln_id": "GHSA-5wxr-w449-57cm",
+      "vuln_severity": "medium",
+      "fix_version": "2.37.1",
+      "message": "Setup PHP: GitHub tokens configured by setup-php may be exposed through pinned affected Composer versions",
+      "cwe": "N/A",
+      "cvss_score": 5.9,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "shivammathur/setup-php",
+      "current_version": "v2.37.0",
+      "vuln_id": "GHSA-5wxr-w449-57cm",
+      "vuln_severity": "medium",
+      "fix_version": "2.37.1",
+      "message": "Setup PHP: GitHub tokens configured by setup-php may be exposed through pinned affected Composer versions",
+      "cwe": "N/A",
+      "cvss_score": 5.9,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "shivammathur/setup-php",
+      "current_version": "v2.37.0",
+      "vuln_id": "GHSA-pqwm-q9pv-ph8r",
+      "vuln_severity": "medium",
+      "fix_version": "2.37.1",
+      "message": "Setup PHP: Command Injection in Repository-Derived PHP Version Resolution",
+      "cwe": "N/A",
+      "cvss_score": 5.6,
+      "type": "vulnerability"
+    },
+    {
+      "package_name": "shivammathur/setup-php",
+      "current_version": "v2.37.0",
+      "vuln_id": "GHSA-pqwm-q9pv-ph8r",
+      "vuln_severity": "medium",
+      "fix_version": "2.37.1",
+      "message": "Setup PHP: Command Injection in Repository-Derived PHP Version Resolution",
+      "cwe": "N/A",
+      "cvss_score": 5.6,
+      "type": "vulnerability"
+    }
+  ],
+  "grype_metadata": {
+    "grype_version": "unknown",
+    "db_location": "",
+    "scanned_path": "/workspaces/Proyecto_ProdSoftware/data/repos/two-factor"
+  }
+}
