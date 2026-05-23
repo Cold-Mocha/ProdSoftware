@@ -2,8 +2,7 @@
 
 Este repositorio contiene el material desplegable de **Produccion de Software EMI305**.
 
-## Primeros pasos
-
+## Primeros
 1. Abre el repositorio en VS Code.
 2. Ejecuta `Dev Containers: Rebuild and Reopen in Container`.
 3. Espera a que el contenedor termine de instalar dependencias y herramientas.

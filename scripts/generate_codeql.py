@@ -440,9 +440,19 @@ class CodeQLAnalyzer:
             check=False,
         )
 
-        # Si falla y es JavaScript, intentar con --skip-autobuild como fallback
-        if resultado.returncode != 0 and lenguaje == "javascript":
-            LOGGER.warning("Autobuild falló para %s. Intentando con --skip-autobuild...", ruta_repo.name)
+        # Si falla y el lenguaje admite extracción sin compilar, reintentar sin build.
+        # - JavaScript/TypeScript: --skip-autobuild
+        # - Go: --build-mode=none (extrae el código fuente sin necesidad de compilar)
+        flags_sin_build = {
+            "javascript": ["--skip-autobuild"],
+            "go": ["--build-mode=none"],
+        }
+        if resultado.returncode != 0 and lenguaje in flags_sin_build:
+            LOGGER.warning(
+                "Autobuild falló para %s. Reintentando sin compilación (%s)...",
+                ruta_repo.name,
+                " ".join(flags_sin_build[lenguaje]),
+            )
 
             db_path_retry = self.temp_dir / f"{ruta_repo.name}_db_noautobuild"
             comando_retry = [
@@ -455,7 +465,7 @@ class CodeQLAnalyzer:
                 "--source-root",
                 str(ruta_repo),
                 "--overwrite",
-                "--skip-autobuild",  # Fallback: sin compile automático
+                *flags_sin_build[lenguaje],  # Fallback: sin compile automático
             ]
 
             resultado_retry = subprocess.run(
@@ -466,7 +476,10 @@ class CodeQLAnalyzer:
             )
 
             if resultado_retry.returncode == 0:
-                LOGGER.info("✓ Base de datos creada exitosamente con --skip-autobuild")
+                LOGGER.info(
+                    "✓ Base de datos creada exitosamente sin compilación (%s)",
+                    " ".join(flags_sin_build[lenguaje]),
+                )
                 return db_path_retry
             else:
                 # Ambos intentos fallaron
@@ -475,7 +488,7 @@ class CodeQLAnalyzer:
                     f"No fue posible crear la base de datos CodeQL para {ruta_repo.name} (intentos con y sin autobuild): {detalle_error}"
                 )
 
-        # Para otros lenguajes o si el primer intento de JS funcionó
+        # Para otros lenguajes o si el primer intento funcionó
         if resultado.returncode != 0:
             detalle_error = resultado.stderr.strip() or "CodeQL termino con un error desconocido."
             raise RuntimeError(

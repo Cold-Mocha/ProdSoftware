@@ -1,7 +1,7 @@
 import requests
 import json
 
-ORG = "WordPress"
+ORG = "expressjs"
 BASE_PATH = "data/repos"
 TOP_N = 10
 

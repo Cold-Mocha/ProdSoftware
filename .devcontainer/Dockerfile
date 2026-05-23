@@ -14,6 +14,12 @@ RUN curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | 
 # Install Grype (Software Vulnerability Scanner)
 RUN curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
 
+# Install Gitleaks (Secret Scanner)
+RUN curl -sSfL https://github.com/gitleaks/gitleaks/releases/download/v8.21.2/gitleaks_8.21.2_linux_x64.tar.gz -o /tmp/gitleaks.tar.gz \
+    && tar -xzf /tmp/gitleaks.tar.gz -C /usr/local/bin gitleaks \
+    && chmod +x /usr/local/bin/gitleaks \
+    && rm /tmp/gitleaks.tar.gz
+
 # Install Node.js (required for CodeQL JavaScript analysis and autobuild)
 # Remove problematic yarn repository first to avoid GPG key errors
 RUN rm -f /etc/apt/sources.list.d/yarn.list && \
@@ -23,6 +29,12 @@ RUN rm -f /etc/apt/sources.list.d/yarn.list && \
     && apt-get install -y nodejs \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
+# Install Go (required for CodeQL Go analysis / autobuild)
+RUN curl -sSfL https://go.dev/dl/go1.23.4.linux-amd64.tar.gz -o /tmp/go.tar.gz \
+    && tar -C /usr/local -xzf /tmp/go.tar.gz \
+    && rm /tmp/go.tar.gz
+ENV PATH="/usr/local/go/bin:${PATH}"
 
 # Install CodeQL CLI
 RUN curl -sSfL https://github.com/github/codeql-cli-binaries/releases/download/v2.25.1/codeql-linux64.zip -o /tmp/codeql.zip \
@@ -41,8 +53,10 @@ RUN codeql pack download codeql/python-queries \
 # Verify CodeQL, Grype, Node.js, and npm installation
 RUN echo "CodeQL version:" && codeql version \
     && echo "Grype version:" && grype version \
+    && echo "Gitleaks version:" && gitleaks version \
     && echo "Node.js version:" && node --version \
-    && echo "npm version:" && npm --version
+    && echo "npm version:" && npm --version \
+    && echo "Go version:" && go version
 
 # Set environment variables for uv
 ENV UV_LINK_MODE=copy

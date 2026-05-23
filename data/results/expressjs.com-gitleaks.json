@@ -1,0 +1,26 @@
+{
+  "repositorio": "expressjs.com",
+  "total_hallazgos": 1,
+  "hallazgos": [
+    {
+      "Description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "StartLine": 2,
+      "EndLine": 2,
+      "StartColumn": 2,
+      "EndColumn": 41,
+      "Match": "apiKey: 7164e33055faa6ecddefd9e08fc59f5d",
+      "Secret": "7164e33055faa6ecddefd9e08fc59f5d",
+      "File": "_data/docsearch.yml",
+      "SymlinkFile": "",
+      "Commit": "39ca4052288ba137787182c1bb487f4a2c06d416",
+      "Entropy": 3.625,
+      "Author": "s-pace",
+      "Email": "sylvain.pace@algolia.com",
+      "Date": "2019-04-24T11:31:00Z",
+      "Message": "Add search using docsearch\n\ncloses #1039",
+      "Tags": [],
+      "RuleID": "generic-api-key",
+      "Fingerprint": "39ca4052288ba137787182c1bb487f4a2c06d416:_data/docsearch.yml:generic-api-key:2"
+    }
+  ]
+}
