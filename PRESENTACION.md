@@ -130,15 +130,28 @@ Referencia completa: [`README.md`](README.md#5-priorizacion-de-vulnerabilidades)
 
 Acciones propuestas:
 
+Correctivas:
+
 - rotar y revocar secretos confirmados como reales
 - mover credenciales a secretos gestionados por entorno o CI
 - documentar fixtures validos como falso positivo controlado o generarlos durante tests
 - actualizar dependencias vulnerables de `expressjs.com`
 - re-ejecutar Grype, CodeQL y Gitleaks tras los cambios
 - corregir patrones inseguros de codigo cuando afecten rutas ejecutables o publicas
-- agregar controles en CI para bloquear nuevos secretos y vulnerabilidades criticas
+
+Preventivas:
+
+- agregar pipeline de seguridad en pull requests, merges, tags y versiones previas a produccion
+- comparar cada ejecucion contra un baseline para detectar vulnerabilidades nuevas
+- bloquear secretos nuevos y vulnerabilidades critical/high sin excepcion aprobada
+- mantener registro de falsos positivos, ignores permitidos y fixtures aceptados
+- exigir revision humana para hallazgos en autenticacion, sesiones, cookies, CORS, subida de archivos, parsing de entrada o CI/CD
+- revisar periodicamente permisos, tokens y configuracion de pipelines
+- aplicar mejora continua: repetir analisis aunque la version actual quede corregida
+- reabrir decisiones si aparece nueva evidencia o cambian dependencias, codigo, pipeline o contexto de amenaza
 
 Referencia completa: [`README.md`](README.md#6-acciones-propuestas).
+Documento preventivo: [`SEGURIDAD_PREVENTIVA.md`](SEGURIDAD_PREVENTIVA.md).
 
 ## Cierre
 
@@ -148,8 +161,10 @@ La propuesta reduce el riesgo porque enfoca el esfuerzo en lo mas importante:
 - despues dependencias vulnerables con parche disponible
 - luego codigo segun exposicion real
 - fixtures se validan, no se sobrerreaccionan
-- CI/CD queda como barrera preventiva para evitar reincidencia
+- CI/CD queda como barrera preventiva para evitar reincidencia antes de produccion
+- falsos positivos e ignores quedan documentados, con dueño y fecha de revision
+- mejora continua queda como directriz: el analisis no termina, se repite con cada version y con cada cambio relevante
 
-Conclusion para exponer: no se trata de corregir todo al mismo tiempo; se trata de corregir primero lo que tiene mayor impacto, evidencia fuerte y mayor exposicion.
+Conclusion para exponer: no se trata de corregir todo al mismo tiempo ni de asumir que el sistema queda seguro para siempre. Se corrige primero lo de mayor impacto y se mantiene un ciclo continuo porque pueden aparecer riesgos nuevos que no eran visibles de forma inmediata o deterministica.
 
 Referencia completa: [`README.md`](README.md#8-conclusiones).

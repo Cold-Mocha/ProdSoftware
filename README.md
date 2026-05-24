@@ -91,6 +91,8 @@ Repos con cero hallazgos relevantes en los artefactos revisados: `compression`, 
 
 ## 6. Acciones propuestas
 
+### Acciones correctivas
+
 - rotar y revocar secretos confirmados como reales o reutilizados
 - limpiar historial git si un secreto real ya se publico
 - documentar fixtures validos como falso positivo controlado o generarlos durante tests
@@ -98,7 +100,20 @@ Repos con cero hallazgos relevantes en los artefactos revisados: `compression`, 
 - actualizar dependencias vulnerables de `expressjs.com`
 - re-ejecutar Grype, CodeQL y Gitleaks tras cada correccion
 - reforzar revisiones de PR para evitar cookies inseguras, logs sensibles y XSS
-- añadir controles preventivos en CI para bloquear nuevos secretos y vulnerabilidades criticas
+
+### Acciones preventivas
+
+- crear una pipeline de seguridad que se ejecute en cada pull request, merge a rama principal, tag o version previa a produccion
+- generar SBOM en cada version y comparar vulnerabilidades nuevas contra un baseline conocido
+- bloquear vulnerabilidades critical/high nuevas en dependencias, salvo excepcion documentada y aprobada
+- bloquear secretos nuevos detectados por Gitleaks, excepto fixtures documentados como falsos positivos controlados
+- ejecutar CodeQL en cambios de codigo y exigir revision humana si el hallazgo toca codigo ejecutable, autenticacion, sesiones, cookies, CORS, subida de archivos o parsing de entrada
+- mantener documentacion asociada de falsos positivos, codigos/rutas ignoradas, criterios de revision humana y fecha de expiracion de excepciones
+- revisar periodicamente configuraciones de CI/CD, permisos, tokens y reglas de despliegue
+- adoptar mejora continua como directriz: repetir analisis aunque los hallazgos actuales se corrijan, porque pueden aparecer vulnerabilidades nuevas por cambios de codigo, dependencias, herramientas o inteligencia de amenazas
+- reabrir la evaluacion cuando aparezca nueva evidencia, aunque no exista una forma deterministica o inmediata de anticipar todos los riesgos
+
+Documento asociado: [`SEGURIDAD_PREVENTIVA.md`](SEGURIDAD_PREVENTIVA.md).
 
 ## 7. Evidencia utilizada
 
@@ -108,6 +123,7 @@ Repos con cero hallazgos relevantes en los artefactos revisados: `compression`, 
 - `data/results/*-gitleaks.json`: secretos detectados con ubicacion y commit origen
 - `data/results/*_temp.sarif`: salidas temporales de escaneo
 - scripts en `scripts/`: generacion de SBOM, CodeQL y Grype
+- `SEGURIDAD_PREVENTIVA.md`: propuesta de pipeline preventiva, gestion de falsos positivos, ignores y criterios de revision humana
 
 ## 8. Conclusiones
 
@@ -118,9 +134,11 @@ Las acciones propuestas reducen el riesgo porque:
 - limitan exposicion de credenciales mediante rotacion, revocacion y uso de secretos gestionados
 - reducen superficie de ataque actualizando dependencias con versiones corregidas
 - mejoran calidad defensiva del codigo corrigiendo patrones inseguros detectados por CodeQL
-- fortalecen el proceso futuro con controles en CI para bloquear nuevos secretos y vulnerabilidades criticas
+- fortalecen el proceso futuro con controles en CI para bloquear nuevos secretos y vulnerabilidades criticas antes de produccion
+- evitan deuda silenciosa mediante baseline, documentacion de falsos positivos, ignores con expiracion y revision humana constante
+- incorporan mejora continua: cada version vuelve a analizarse y cada excepcion vuelve a revisarse
 
-En sintesis, la propuesta combina correccion inmediata, validacion de evidencia y prevencion continua para que el sistema analizado quede menos expuesto y mas controlado.
+En sintesis, la propuesta combina correccion inmediata, validacion de evidencia, prevencion continua y mejora permanente. No asume que una correccion cierre el problema para siempre; asume que el sistema cambia y que el analisis debe repetirse para detectar riesgos nuevos antes de publicar nuevas versiones.
 
 ## Inicio rapido
 
