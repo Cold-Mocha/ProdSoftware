@@ -4,6 +4,9 @@ _proc/
 .welcome_flag
 data/repos/
 
+# Configuracion local de herramientas de IA / editor
+.claude/
+
 *.bak
 .last_checked
 .gitconfig

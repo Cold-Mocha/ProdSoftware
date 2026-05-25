@@ -7,7 +7,7 @@
             "name": "express",
             "full_name": "expressjs/express",
             "language": "JavaScript",
-            "stars": 69053,
+            "stars": 69054,
             "description": "Fast, unopinionated, minimalist web framework for node.",
             "default_branch": "master",
             "pushed_at": "2026-05-17T14:48:35Z"
@@ -19,7 +19,7 @@
             "name": "multer",
             "full_name": "expressjs/multer",
             "language": "JavaScript",
-            "stars": 12049,
+            "stars": 12048,
             "description": "Node.js middleware for handling `multipart/form-data`.",
             "default_branch": "main",
             "pushed_at": "2026-05-01T18:19:00Z"
@@ -82,7 +82,7 @@
             "stars": 5333,
             "description": "The Express.js Website",
             "default_branch": "main",
-            "pushed_at": "2026-05-19T01:23:17Z"
+            "pushed_at": "2026-05-24T18:47:10Z"
         },
         {
             "url": "https://github.com/expressjs/compression.git",
