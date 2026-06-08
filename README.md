@@ -3,7 +3,7 @@
 **Estudiantes:** Daniela Díaz · David Millar
 **Docente:** Mg. Pablo Valenzuela
 **Asignatura:** Producción de Software (EMI305-1)
-**Fecha:** 25 de mayo del 2026
+**Ultima Actualización:** 7 de Junio del 2026
 
 Propuesta de gestión de vulnerabilidades para el ecosistema **Express (Node.js)**, organizada según el ciclo **Conozco → Verifico → Evidencio → Decido y Actúo** y los tres vectores de ataque: dependencias y código fuente, pipelines de CI/CD y humanos.
 
